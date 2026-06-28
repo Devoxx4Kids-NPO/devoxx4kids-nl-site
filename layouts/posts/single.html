@@ -1,9 +1,0 @@
-{{ define "main" }}
-  <h1>{{ .Params.Title }}</h1>
-  <p>{{ .Date.Format "January 2, 2006" }}</p>
-  {{ if .Params.image }}
-    <img src="{{ .Params.image }}" alt="{{ .Title }}">
-  {{ end }}
-{{ .Content }}
-{{ end }}
-

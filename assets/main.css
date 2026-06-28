@@ -95,6 +95,7 @@ nav ul {
   }
 }
 
+
 .main-content {
   min-height: calc(100vh - 200px);  /* Prevents footer from floating */
 }
