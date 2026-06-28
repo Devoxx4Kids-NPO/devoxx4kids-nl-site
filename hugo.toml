@@ -22,11 +22,16 @@ title = 'Devoxx4Kids website'
    name = "Gastlessen"
    url = "/posts/gastlessen/"
    weight = 3
- [[menu.main]]
+[[menu.main]]
+   name = "Modules"
+   url = "/pages/modules/"
+   weight = 4
+[[menu.main]]
    name = "Stichting Devoxx4KidsNL"
    url = "/pages/stichting-d4k/"
-   weight = 4
+   weight = 5
  [[menu.main]]
    name = "Over ons"
    url = "/pages/overons/"
-   weight = 5
+   weight = 6
+
