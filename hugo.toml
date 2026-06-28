@@ -1,6 +1,6 @@
-baseURL = 'https://ooms.github.io/'
+baseURL = 'https://Devoxx4Kids-NPO.github.io/'
 locale = 'en-us'
-title = 'My New Hugo Project'
+title = 'Devoxx4Kids website'
 
 [params]
   name = 'momatwork'
