@@ -1,0 +1,31 @@
+name: Deploy Hugo site
+
+on:
+  push:
+    branches:
+      - setup
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: latest
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: Devoxx4Kids-NPO/Devoxx4Kids-NPO.github.io
+          publish_branch: setup
+          publish_dir: ./public

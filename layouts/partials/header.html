@@ -1,0 +1,21 @@
+<header>
+  <div class="header-content">
+    {{ if site.Params.logo }}
+      <a href="{{ site.BaseURL }}" class="logo-link">
+        <img 
+          src="{{ site.Params.logo | relURL }}" 
+          alt="{{ site.Params.logoAlt | default "Logo" }}"
+          class="logo"
+          style="max-width: {{ site.Params.logoWidth | default "150px" }}"
+        >
+      </a>
+    {{ end }}
+    
+    <!-- Your navigation menu here -->
+    <nav>
+      {{ range site.Menus.main }}
+        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

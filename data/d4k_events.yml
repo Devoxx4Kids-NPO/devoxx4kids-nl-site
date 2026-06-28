@@ -1,0 +1,21 @@
+- name: Amsterdam
+  latitude: 52.3676
+  longitude: 4.9041
+- name: Rotterdam
+  latitude: 51.9225
+  longitude: 4.4792
+- name: Utrecht
+  latitude: 52.0902
+  longitude: 5.1078
+- name: Den Haag
+  latitude: 52.0767
+  longitude: 4.2984
+- name: Arnhem
+  latitude: 51.9856
+  longitude: 5.8984
+- name: Apeldoorn
+  latitude: 52.2111
+  longitude: 5.9697
+- name: Nieuwegein
+  latitude: 52.0267
+  longitude: 5.0833

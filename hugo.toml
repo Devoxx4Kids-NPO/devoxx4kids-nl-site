@@ -1,0 +1,28 @@
+baseURL = 'https://ooms.github.io/'
+locale = 'en-us'
+title = 'My New Hugo Project'
+
+[params]
+  name = 'momatwork'
+  logo = "images/DevoxxWithoutBrackets_PNG_1000px.png"
+  logoAlt = "Devoxx4kids logo"
+  logoWidth = "300px" #optional: control size
+  
+
+[menu]
+ [[menu.main]]
+   name = "Welkom"
+   url = "/"
+   weight = 1
+ [[menu.main]]
+   name = "Komende edities"
+   url = "/posts/"
+   weight = 2
+ [[menu.main]]
+   name = "Stichting Devoxx4KidsNL"
+   url = "/pages/stichting-d4k/"
+   weight = 3
+ [[menu.main]]
+   name = "Over ons"
+   url = "/pages/overons/"
+   weight = 4
