@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1>Gastlessen door Devoxx4kids</h1>
+{{ .Content }}
+  <h2>Voorbeeld gastlessen</h2>
+  <ul>
+{{ range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "January 2, 2006" }}
+    </li>
+{{ end }}
+  </ul>
+{{ end }}
