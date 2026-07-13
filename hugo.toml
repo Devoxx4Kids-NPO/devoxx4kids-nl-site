@@ -31,7 +31,11 @@ title = 'Devoxx4Kids website'
    url = "/pages/stichting-d4k/"
    weight = 5
  [[menu.main]]
+   name = "Partners"
+   url = "/pages/partners/"
+   weight = 6
+ [[menu.main]]
    name = "Over ons"
    url = "/pages/overons/"
-   weight = 6
+   weight = 7
 
