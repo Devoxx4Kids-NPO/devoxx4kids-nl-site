@@ -68,21 +68,21 @@ Website: https://www.devoxx4kids.nl
 ## Financieel
 #### 2025
 
-Balans en de staat van baten en lasten met toelichting: Financieel Jaarverslag 2025  
-Staat van baten en lasten met toelichting: Financieel dagboek 2025 details  
+Balans en de staat van baten en lasten met toelichting: [Financieel Jaarverslag 2025](/documents/Financieel-jaarverslag-2025.pdf)  
+Staat van baten en lasten met toelichting: [Financieel dagboek 2025 details](/documents/Financieel-jaarverslag-2025-details.pdf)   
 Standaardformulier publicatieplicht: —  
 
 #### 2024
-Balans en de staat van baten en lasten met toelichting: Financieel Jaarverslag 2024  
-Staat van baten en lasten met toelichting: Financieel dagboek 2024 details  
+Balans en de staat van baten en lasten met toelichting: [Financieel Jaarverslag 2024](/documents/FinancieelJaarverslag2024.pdf)  
+Staat van baten en lasten met toelichting: [Financieel dagboek 2024 details](/documents/Financieeljaarverslag2024-details.pdf) 
 Standaardformulier publicatieplicht:  —  
 
 2023
-Balans en de staat van baten en lasten met toelichting: Financieel Jaarverslag 2023
+Balans en de staat van baten en lasten met toelichting: [Financieel Jaarverslag 2023](/documents/FinancieelJaarverslag2023.pdf)  
 
 ## Overig
 Actueel verslag activiteiten:  —  
-Hoofdlijnen beleidsplan: Beleidsplan 2022  
+Hoofdlijnen beleidsplan: [Beleidsplan 2022](/documents/Beleidsplan-2022.docx_.pdf)    
 Twitter: @devoxx4kidsnl  
 Facebook: https://www.facebook.com/Littil-108387778343588  
 Doelgroep: Jeugd 8 – 14 jaar  
