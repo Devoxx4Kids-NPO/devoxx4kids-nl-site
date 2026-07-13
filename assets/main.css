@@ -27,6 +27,9 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   padding: 1rem 2rem;
   background-color: #f8f9fa;
   border-bottom: 1px solid #e9ecef;
