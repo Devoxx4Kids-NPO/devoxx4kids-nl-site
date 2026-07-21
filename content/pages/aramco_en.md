@@ -2,6 +2,12 @@
 title: Donateur - Aramco Europe
 ---
 
+{{< figure
+src="/images/partners/sponsor-aramco-europe.png"
+width="300"
+>}}
+
+[Dutch version](/pages/aramco_nl/)
 
 ## Aramco Europe Supports Devoxx4Kids: Reaching More Children with IT Education
 

@@ -6,7 +6,7 @@ De stichting en de verschillende events worden ondersteund door verschillende pa
 
 - NLJug
 - JDuchess
-- [Aramco](/pages/aramco/)
+- [Aramco](/pages/aramco_nl/)
 - Openweb
 - OpenValue
 - Kadaster
