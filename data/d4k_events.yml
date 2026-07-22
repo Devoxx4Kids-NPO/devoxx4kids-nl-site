@@ -19,3 +19,6 @@
 - name: Nieuwegein
   latitude: 52.0267
   longitude: 5.0833
+- name: Den Haag
+  latitude: 52.0705
+  longitude: 4.3007
