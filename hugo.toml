@@ -3,7 +3,7 @@ locale = 'en-us'
 title = 'Devoxx4Kids website'
 
 [params]
-  name = 'momatwork'
+  name = 'Stichting Devoxx4kids Nederland'
   logo = "images/DevoxxWithoutBrackets_PNG_1000px.png"
   logoAlt = "Devoxx4kids logo"
   logoWidth = "300px" #optional: control size
