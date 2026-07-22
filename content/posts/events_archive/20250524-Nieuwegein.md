@@ -28,8 +28,6 @@ Je gaat in drie workshops aan de slag onder begeleiding van ervaren programmeurs
 14:15 – 15:25 Je volgt je laatste workshop  
 15:30 – 16:00 Afsluiten, jullie laten aan je ouders zien wat jullie gebouwd hebben  
 
-Inschrijven kan op https://kinderenlerenprogrammeren.eventbrite.nl  
-
 **Locatie**  
 Open Web IT  
 Nevelgaarde 20G  
