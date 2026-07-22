@@ -4,8 +4,8 @@ summary: "Op 7 november 2026 organiseert Kadaster in samenwerking met Craftsmen 
 date: 2026-07-02
 author: svermeer
 category: events
-image: /images/posts/Verwacht-D4k event.png
-thumbnail: /images/posts/Verwacht-D4k event.gif
+image: /images/posts/Verwacht-D4k-event.png
+thumbnail: /images/posts/Verwacht-D4k-event.gif
 
 ---
 Op 7 november 2026 organiseert Kadaster in samenwerking met Craftsmen een Devoxx4kids event in Apeldoorn, meer informatie volgt snel.  
