@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+
+  <div class="events-list">
+    {{ range .Pages }}
+      <article class="event-card">
+        <div class="event-card-image">
+          {{ if .Params.thumbnail }}
+            <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" />
+          {{ else if .Params.image }}
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+          {{ end }}
+        </div>
+        
+        <div class="event-card-content">
+          <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+          <p class="event-date">{{ .Date.Format "2 Jan, 2006" }}</p>
+          
+          <p class="event-summary">
+            {{ .Summary }}
+            <a href="{{ .Permalink }}" class="read-more"> →</a>
+          </p>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+{{ end }}
