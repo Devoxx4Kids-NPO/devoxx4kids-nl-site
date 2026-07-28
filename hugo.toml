@@ -42,4 +42,9 @@ title = 'Devoxx4Kids website'
    name = "Over ons"
    url = "/pages/overons/"
    weight = 8
+[[menu.main]]
+   name = "Events"
+   url = "/posts/events-new/"
+   weight = 9
+
 

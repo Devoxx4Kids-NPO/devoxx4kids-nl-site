@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+<div id="upcoming-events">
+  <div class="event-tabs">
+    <button onclick="showEvents('historical')">Vorige edies</button>
+  </div>
+
+  <h1>Komende edities</h1>
+  <div class="events-list">
+    {{ range .Pages }}
+    {{ if gt (time .Params.eventDate) now }}
+    {{ partial "event-card.html" . }}
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+<div id="historical-events" style="display:none;">
+  <div class="event-tabs">
+    <button onclick="showEvents('upcoming')">Komende edities</button>
+  </div>
+
+  <h1>Vorige edities</h1>
+  <div class="events-list">
+    {{ range .Pages }}
+    {{ if lt (time .Params.eventDate) now }}
+    {{ partial "event-card.html" . }}
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+<script>
+  function showEvents(type) {
+     document.getElementById('upcoming-events').style.display =
+             type === 'upcoming' ? 'block' : 'none';
+      document.getElementById('historical-events').style.display =
+              type === 'historical' ? 'block' : 'none';
+  }
+</script>
+
+
+{{ end }}

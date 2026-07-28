@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ if .Params.image }}
+    <div class="post-featured-image">
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+    </div>
+  {{ end }}
+  
+  <h1>{{ .Params.Title }}</h1>
+  <p>{{ .Date.Format "2 Jan, 2006" }}</p>
+{{ .Content }}
+{{ end }}
+
