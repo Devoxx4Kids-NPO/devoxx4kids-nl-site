@@ -1,6 +1,6 @@
 
 {{ $today := now }}
-{{ $events := where .Site.RegularPages "File.Dir" "posts\\events\\" }}
+{{ $events := where .Site.RegularPages "Section" "events" }}
 
 {{ $futureEvents := slice }}
 
@@ -18,7 +18,7 @@
     {{ if eq $eventCount 0 }}
     <p>Er zijn op dit moment geen edities gepland</p>
     {{ else if gt $eventCount 3 }}
-    <p>Ga naar <a href="/posts/events/">edities</a> voor het volledige overzicht.</p>
+    <p>Ga naar <a href="/events/">edities</a> voor het volledige overzicht.</p>
     {{ end }}
 
 
