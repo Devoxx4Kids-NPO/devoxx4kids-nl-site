@@ -1,3 +1,3 @@
 ---
-title: Komende edities 
+title: Komende events 
 ---

@@ -15,7 +15,7 @@ title = 'Devoxx4Kids website'
    url = "/"
    weight = 1
  [[menu.main]]
-   name = "edities"
+   name = "events"
    url = "/events/"
    weight = 2
  [[menu.main]]

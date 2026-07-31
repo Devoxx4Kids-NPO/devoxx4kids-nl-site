@@ -17,5 +17,8 @@ Indien je aan de slag wilt met een les module, dan raden wij je aan om de volgen
     - [SonicPi](http://www.devoxx4kids.org/nederland/materiaal/sonic-pi/)
 - Een algemene IT les met uitgebreide gastdocent instructies vindt je hier: 
     - [Introductie IT](https://github.com/devoxx4kids/materials/tree/master/workshops/IntroductionToIT/nl)
-- Al het materiaal is te vinden onder deze link, niet alle modules zijn echter direct toe te passen in de klas:
-   - [Devoxx4Kids materiaal](https://github.com/devoxx4kids/materials/tree/master/workshops/IntroductionToIT/nl)
+
+
+ Op [Devoxx4Kids materiaal](https://github.com/devoxx4kids/materials/tree/master/workshops/IntroductionToIT/nl) vindt je alle beschikbare modules.
+ Niet alle modules zijn echter direct toe te passen in de klas.
+

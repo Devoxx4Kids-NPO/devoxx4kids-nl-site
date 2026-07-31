@@ -2,10 +2,10 @@
 
 <div id="upcoming-events">
   <div class="event-tabs">
-    <button onclick="showEvents('historical')">Vorige edies</button>
+    <button onclick="showEvents('historical')">Vorige events</button>
   </div>
 
-  <h1>Komende edities</h1>
+  <h1>Komende events</h1>
   <div class="events-list">
     {{ range .Pages }}
     {{ if gt (time .Params.eventDate) now }}
@@ -17,10 +17,10 @@
 
 <div id="historical-events" style="display:none;">
   <div class="event-tabs">
-    <button onclick="showEvents('upcoming')">Komende edities</button>
+    <button onclick="showEvents('upcoming')">Komende events</button>
   </div>
 
-  <h1>Vorige edities</h1>
+  <h1>Vorige events</h1>
   <div class="events-list">
     {{ range .Pages }}
     {{ if lt (time .Params.eventDate) now }}

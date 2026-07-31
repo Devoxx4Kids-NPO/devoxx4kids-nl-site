@@ -8,4 +8,4 @@ De Stichting Devoxx4kidsNL is in het leven geroepen om ondersteuning te bieden e
 
 Wil een bedrijf of organisatie graag een Devoxx4kids event organiseren dan kan zij hiervoor een aanvraag doen bij de stichting.
 
-Wil een school graag een gastles laten verzorgen door een van onze vrijwillers? Ga dan naar [Gastlessen](/posts/gastlessen/).
+Voor scholen die interesse hebben in een gastles verzorgd door een van onze vrijwilligers, is meer informatie te vinden op de pagina [Gastlessen](/posts/gastlessen/).
