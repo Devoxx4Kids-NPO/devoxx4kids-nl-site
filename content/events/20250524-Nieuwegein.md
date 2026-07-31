@@ -2,6 +2,7 @@
 title: Devoxx4kids op 24 mei 2025 in Nieuwegein
 summary: "Op 24 mei 2025 organiseerde Open Web voor de 11e keer een Devoxx4kids event."
 date: 2025-03-06
+eventDate: 2025-05-24
 author: svermeer
 category: events_archive
 image: /images/posts/Devoxx4kidsOpenWeb-300x150.jpg
