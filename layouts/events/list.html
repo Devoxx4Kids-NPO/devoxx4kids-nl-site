@@ -6,7 +6,7 @@
   </div>
 
   <h1>Komende events</h1>
-  <div class="events-list">
+  <div class="event-grid">
     {{ range .Pages }}
     {{ if gt (time .Params.eventDate) now }}
     {{ partial "event-card.html" . }}
