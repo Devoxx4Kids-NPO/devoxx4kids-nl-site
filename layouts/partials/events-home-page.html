@@ -21,14 +21,11 @@
     <p>Ga naar <a href="/events/">events</a> voor het volledige overzicht.</p>
     {{ end }}
 
-
-    <div class="event-grid">
+    <div class="event-grid-home-page">
         {{ range first 3 (sort $futureEvents ".Params.eventDate" "asc") }}
-        <article class="event-card-home">
+        <article class="event-card-home-page">
             {{ if .Params.thumbnail }}
                 <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" />
-            {{ else }}
-                <img src="/images/posts/Verwacht-D4k-event.gif" alt="{{ .Title }}" />
             {{ end }}
             <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
         </article>
