@@ -1,0 +1,36 @@
+
+{{ $today := now }}
+{{ $events := where .Site.RegularPages "Section" "events" }}
+
+{{ $futureEvents := slice }}
+
+{{ range $events }}
+{{ $eventDate := time .Params.eventDate }}
+{{ if gt $eventDate now }}
+{{ $futureEvents = $futureEvents | append . }}
+{{ end }}
+{{ end }}
+
+{{ $eventCount := len $futureEvents }}
+
+<section class="events">
+
+    {{ if eq $eventCount 0 }}
+    <p>Er zijn op dit moment geen events gepland</p>
+    {{ else if gt $eventCount 3 }}
+    <p>Ga naar <a href="/events/">events</a> voor het volledige overzicht.</p>
+    {{ end }}
+
+    <div class="event-grid-home-page">
+        {{ range first 3 (sort $futureEvents ".Params.eventDate" "asc") }}
+        <article class="event-card-home-page">
+            {{ if .Params.thumbnail }}
+                <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" />
+            {{ end }}
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        </article>
+        {{ end }}
+    </div>
+</section>
+
+

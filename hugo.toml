@@ -1,0 +1,40 @@
+baseURL = 'https://Devoxx4Kids-NPO.github.io/'
+locale = 'en-us'
+title = 'Devoxx4Kids website'
+
+[params]
+  name = 'Stichting Devoxx4kids Nederland'
+  logo = "images/DevoxxWithoutBrackets_PNG_1000px.png"
+  logoAlt = "Devoxx4kids logo"
+  logoWidth = "300px" #optional: control size
+  
+
+[menu]
+ [[menu.main]]
+   name = "Welkom"
+   url = "/"
+   weight = 1
+ [[menu.main]]
+   name = "events"
+   url = "/events/"
+   weight = 2
+ [[menu.main]]
+   name = "Gastlessen"
+   url = "/posts/gastlessen/"
+   weight = 3
+[[menu.main]]
+   name = "Modules"
+   url = "/pages/modules/"
+   weight = 4
+[[menu.main]]
+   name = "Stichting Devoxx4KidsNL"
+   url = "/pages/stichting-d4k/"
+   weight = 5
+ [[menu.main]]
+   name = "Partners"
+   url = "/pages/partners/"
+   weight = 6
+ [[menu.main]]
+   name = "Over ons"
+   url = "/pages/overons/"
+   weight = 7
