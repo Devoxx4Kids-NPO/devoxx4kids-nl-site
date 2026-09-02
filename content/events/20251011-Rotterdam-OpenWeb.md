@@ -4,9 +4,9 @@ summary: "Op 11 oktober 2025 organiseerde Open Web een Devoxx4kids event."
 date: 2025-10-06
 eventDate: 2025-10-11
 author: svermeer
-category: events_archive
-image: /images/posts/openweb-2025-rotterdam.jpg
-thumbnail: /images/posts/Devoxx4kidsOpenWeb-300x150.gif
+category: events
+image: /images/events/20251011-Rotterdam-OpenWeb.jpg
+thumbnail: /images/events/20251011-Rotterdam-OpenWeb.gif
 
 ---
 
