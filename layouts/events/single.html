@@ -1,7 +1,10 @@
 {{ define "main" }}
   {{ if .Params.image }}
     <div class="post-featured-image">
-      <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+      <img src="{{ .Params.image }}"
+           alt="{{ .Title }}"
+           style="width: {{ .Params.imageWidth | default 100 }}%;"
+      />
     </div>
   {{ end }}
   

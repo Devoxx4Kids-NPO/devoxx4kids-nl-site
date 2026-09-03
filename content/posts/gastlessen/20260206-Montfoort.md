@@ -3,7 +3,7 @@ title: Gastles in Montfoort
 date: 2026-02-06
 author: svermeer
 category: gastlessen
-image: /images/posts/LITTIL-gastdocent-300x222.jpeg
+image: /images/posts/gastlessen/20260206-Montfoort-300x222.jpeg
 ---
 
 In februari heeft onze vrijwilliger Dick 3 gastlessen verzorgd op Basisschool KBs [De Howiblo in Montfoort](https://www.howiblo.nl/nl/).  

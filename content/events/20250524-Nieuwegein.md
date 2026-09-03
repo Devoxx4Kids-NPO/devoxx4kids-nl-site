@@ -4,9 +4,10 @@ summary: "Op 24 mei 2025 organiseerde Open Web voor de 11e keer een Devoxx4kids 
 date: 2025-03-06
 eventDate: 2025-05-24
 author: svermeer
-category: events_archive
-image: /images/posts/Devoxx4kidsOpenWeb-300x150.jpg
-thumbnail: /images/posts/Devoxx4kidsOpenWeb-300x150.gif
+category: events
+image: /images/events/20250524-Nieuwegein-OpenWeb-300x150.jpg
+imageWidth: 75
+thumbnail: /images/events/20250524-Nieuwegein-OpenWeb-300x150.gif
 
 ---
 

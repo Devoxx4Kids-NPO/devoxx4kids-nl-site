@@ -4,9 +4,11 @@ summary: "Tijdens Devoxx4kids in Utrecht maakten kinderen van 8 tot 14 jaar op e
 date: 2025-11-11
 eventDate: 2025-11-30
 author: svermeer
-category: events_archive
-image: /images/posts/openvalue-11nov2025.jpeg
-thumbnail: /images/posts/openvalue-11nov2025.gif
+category: events
+image: /images/events/20251130-Utrecht-OpenValue.jpeg
+imageWidth: 75
+thumbnail: /images/events/20251130-Utrecht-OpenValue.gif
+
 ---
 
 Kinderen ontdekken bij Devoxx4Kids de wereld van programmeren, robots en technologie via leuke en leerzame workshops.  
