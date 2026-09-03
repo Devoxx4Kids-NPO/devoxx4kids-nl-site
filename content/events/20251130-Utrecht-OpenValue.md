@@ -6,7 +6,9 @@ eventDate: 2025-11-30
 author: svermeer
 category: events
 image: /images/events/20251130-Utrecht-OpenValue.jpeg
+imageWidth: 75
 thumbnail: /images/events/20251130-Utrecht-OpenValue.gif
+
 ---
 
 Kinderen ontdekken bij Devoxx4Kids de wereld van programmeren, robots en technologie via leuke en leerzame workshops.  

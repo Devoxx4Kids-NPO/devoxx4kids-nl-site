@@ -6,6 +6,7 @@ date: 2026-07-15
 author: svermeer
 category: events
 image: /images/events/20260926-Arnhem-Yuma.jpeg
+imageWidth: 50
 thumbnail: /images/events/20260926-Arnhem-Yuma.gif
 
 ---

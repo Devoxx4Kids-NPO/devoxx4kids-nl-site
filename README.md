@@ -13,23 +13,24 @@ You can run the website while developing with the following command: ```hugo ser
 
 ## events
 
-To register a new event create a new file in the [content/events](contents/events) folder.
+To register a new event create a new file in the [content/events/](content/events/.) folder.
 Use the following syntax for the file name : ```yyyymmdd-<city-of-event>-<companyName>.md```.
-Store images for workshops in the folder [static/images/events/](static/images/events/). 
+Store images for workshops in the folder [static/images/events/](static/images/events/.). 
 Try to use the same naming convention as with the md-file.
 
 For events the following parameters can be used in the md-file.
 
-| Parameter | required | description                                       |
-|-----------|----------|---------------------------------------------------|
-| title     | yes      | Title of the event                                |
-| summary   | yes      | Short summary of the event used in lest of events |
-| date      | yes      | Date the event was registerd on the website       |
-| eventDate | yes      | Actual date of the event                          |
-| author    | no       | Name of the person how registered the event       |
-| category  | yes      | fixed text 'events                                |
-| image     | optional | Image used in the detail page of the event        |
-| thumbnail | optional | Image of the event used in the list of events     |
+| Parameter  | required | description                                          |
+|------------|----------|------------------------------------------------------|
+| title      | yes      | Title of the event                                   |
+| summary    | yes      | Short summary of the event used in lest of events    |
+| date       | yes      | Date the event was registerd on the website          |
+| eventDate  | yes      | Actual date of the event                             |
+| author     | no       | Name of the person who registered the event          |
+| category   | yes      | fixed text 'events'                                  |
+| image      | no       | Image used in the detail page of the event           |
+| imageWidth | no       | Width of the image as a percentage. Defaults to 100. | 
+| thumbnail  | no       | Image of the event used in the list of events        |
 
 
 The eventDate is used to discover upcoming or recent events. 
@@ -42,9 +43,9 @@ This can be done by running the GitHub action ```Deploy Hugo site```.
 
 The menu ***gastlessen*** is holding information for workshops. 
 At the end of the page a list of workshops is listed.
-To register a new workshop create a new file in the [content/posts/gastlessen](content/posts/gastlessen) folder.
+To register a new workshop create a new file in the [content/posts/gastlessen/](content/posts/gastlessen/.) folder.
 Use the following syntax for the file name : ```yyyymmdd-<city-of-workshop>.md```.
-Store images for workshops in the folder [static/images/posts/gastlessen/](static/images/posts/gastlessen/).
+Store images for workshops in the folder [static/images/posts/gastlessen/](static/images/posts/gastlessen/.).
 
 For workshops the following parameters can be used.
 
@@ -53,5 +54,5 @@ For workshops the following parameters can be used.
 | Title     | yes      | Title of the workshop                          |
 | date      | yes      | Date of the workshop                           |
 | author    | no       | Name of the person how registered the workshop |
-| category  | yes      | fixed text 'gastlessen                         |
-| image     | optional | Image used in the detail page of the workshop  |
+| category  | yes      | fixed text 'gastlessen'                        |
+| image     | no       | Image used in the detail page of the workshop  |

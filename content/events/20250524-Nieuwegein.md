@@ -6,6 +6,7 @@ eventDate: 2025-05-24
 author: svermeer
 category: events
 image: /images/events/20250524-Nieuwegein-OpenWeb-300x150.jpg
+imageWidth: 75
 thumbnail: /images/events/20250524-Nieuwegein-OpenWeb-300x150.gif
 
 ---

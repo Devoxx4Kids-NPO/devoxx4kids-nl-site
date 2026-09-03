@@ -6,6 +6,7 @@ eventDate: 2026-11-07
 author: svermeer
 category: events
 image: /images/events/Verwacht-D4k-event.png
+imageWidth: 50
 thumbnail: /images/events/Verwacht-D4k-event.gif
 
 ---

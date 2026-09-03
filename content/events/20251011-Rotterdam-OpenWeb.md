@@ -6,6 +6,7 @@ eventDate: 2025-10-11
 author: svermeer
 category: events
 image: /images/events/20251011-Rotterdam-OpenWeb.jpg
+imageWidth: 75
 thumbnail: /images/events/20251011-Rotterdam-OpenWeb.gif
 
 ---
