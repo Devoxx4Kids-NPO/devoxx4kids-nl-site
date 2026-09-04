@@ -3,6 +3,8 @@ name: Deploy Hugo site
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -26,6 +28,6 @@ jobs:
         with:
           deploy_key: ${{ secrets.SSH_KEY_GITHUB_IO }}
           external_repository: Devoxx4Kids-NPO/Devoxx4Kids-NPO.github.io
-          publish_branch: gh-pages-nl
+          publish_branch: gh-pages
           publish_dir: ./public
           destination_dir: ./nl
