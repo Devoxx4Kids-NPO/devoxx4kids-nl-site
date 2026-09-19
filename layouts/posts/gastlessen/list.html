@@ -1,12 +1,100 @@
 {{ define "main" }}
-  <h1>Gastlessen door Devoxx4kids</h1>
-{{ .Content }}
-  <h2>Voorbeeld gastlessen</h2>
-  <ul>
-{{ range .Pages }}
-    <li>
-      <a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "2 Jan, 2006" }}
+{{ $mail := .Params.contact | default "info@devoxx4kids.nl" }}
+{{ $request := printf "mailto:%s?subject=Gastles%%20aanvragen" $mail | safeURL }}
+
+<section class="d4k-hero d4k-hero--art d4k-hero--scene">
+  <div>
+    <p class="d4k-hero__eyebrow">Devoxx4Kids@School</p>
+    <h1 class="d4k-hero__title">Een gastles programmeren voor jullie school</h1>
+    {{ with .Params.summary }}<p class="d4k-hero__lead">{{ . }}</p>{{ end }}
+    <div class="d4k-hero__actions">
+      <a class="d4k-btn d4k-btn--secondary d4k-btn--lg" href="{{ $request }}">Vraag een gastles aan</a>
+    </div>
+  </div>
+  <img class="d4k-hero__art" src="{{ "images/illustrations/gastles.svg" | relURL }}" alt="" width="480" height="300">
+</section>
+
+<section class="page-section" aria-labelledby="h-afspraken">
+  <h2 class="section-title" id="h-afspraken">Dit kun je van ons verwachten</h2>
+  <div class="card-grid">
+    <div class="d4k-card">
+      <h3 class="d4k-card__title">Het is gratis</h3>
+      <p class="d4k-card__body">De gastdocenten geven vrijwillig en zonder vergoeding les.</p>
+    </div>
+    <div class="d4k-card">
+      <h3 class="d4k-card__title">Wij nemen alles mee</h3>
+      <p class="d4k-card__body">Laptops, robots, micro:bits en stekkerdozen. Jullie zorgen voor een lokaal.</p>
+    </div>
+    <div class="d4k-card">
+      <h3 class="d4k-card__title">Eén ochtend of middag</h3>
+      <p class="d4k-card__body">Het past in één ochtend of middag.</p>
+    </div>
+  </div>
+</section>
+
+{{ partial "module-grid.html" (dict
+  "pages" (partial "event-modules.html" .)
+  "title" "Dit doen de kinderen"
+  "lead" "Een greep uit onze modules. Welke les bij jullie klas past, spreken we per mail met je af."
+  "more" true) }}
+
+<section class="page-section" aria-labelledby="h-aanvragen">
+  <h2 class="section-title" id="h-aanvragen">Zo vraag je een gastles aan</h2>
+  <ol class="d4k-stepper">
+    <li class="d4k-stepper__item">
+      <span class="d4k-stepper__marker" aria-hidden="true">1</span>
+      <div>
+        <p class="d4k-stepper__title">Stuur ons een mail</p>
+        <p class="d4k-stepper__body">Mail naar <a href="{{ $request }}">{{ $mail }}</a>. Vertel om welke school en welke groep het gaat, en wat je graag wilt.</p>
+      </div>
     </li>
+    <li class="d4k-stepper__item">
+      <span class="d4k-stepper__marker" aria-hidden="true">2</span>
+      <div>
+        <p class="d4k-stepper__title">Wij zoeken een gastdocent</p>
+        <p class="d4k-stepper__body">We zoeken een vrijwilliger in jullie omgeving die past bij jullie wensen.</p>
+      </div>
+    </li>
+    <li class="d4k-stepper__item">
+      <span class="d4k-stepper__marker" aria-hidden="true">3</span>
+      <div>
+        <p class="d4k-stepper__title">Samen plannen</p>
+        <p class="d4k-stepper__body">De gastdocent en jij spreken samen een moment af.</p>
+      </div>
+    </li>
+    <li class="d4k-stepper__item">
+      <span class="d4k-stepper__marker" aria-hidden="true">4</span>
+      <div>
+        <p class="d4k-stepper__title">De gastles</p>
+        <p class="d4k-stepper__body">De gastdocent komt met alles wat nodig is. De kinderen gaan zelf aan de slag.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+{{ with .Pages }}
+<section class="page-section" aria-labelledby="h-eerder">
+  <h2 class="section-title" id="h-eerder">Eerdere gastlessen</h2>
+  <div class="card-grid">
+    {{ range .ByDate.Reverse }}
+      <a class="d4k-card d4k-card--pop d4k-card--link" href="{{ .RelPermalink }}">
+        {{ with .Params.image }}<img class="d4k-card__image" src="{{ . }}" alt="" loading="lazy">{{ end }}
+        <p class="d4k-card__meta">{{ time.Format "2 January 2006" .Date }}</p>
+        <h3 class="d4k-card__title">{{ .Title }}</h3>
+        <p class="d4k-card__body">{{ .Summary | plainify | truncate 140 }}</p>
+      </a>
+    {{ end }}
+  </div>
+</section>
 {{ end }}
-  </ul>
+
+<section class="page-section">
+  <div class="cta-band">
+    <div>
+      <h2 class="section-title">Interesse in een gastles?</h2>
+      <p class="intro">Mail naar <a href="{{ $request }}">{{ $mail }}</a> en vertel ons wat je zoekt.</p>
+    </div>
+    <a class="d4k-btn d4k-btn--primary d4k-btn--lg" href="{{ $request }}">Vraag een gastles aan</a>
+  </div>
+</section>
 {{ end }}

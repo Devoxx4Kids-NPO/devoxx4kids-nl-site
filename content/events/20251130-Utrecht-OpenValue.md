@@ -1,37 +1,43 @@
 ---
 title: Devoxx4kids op 30 november 2025 in Utrecht
-summary: "Tijdens Devoxx4kids in Utrecht maakten kinderen van 8 tot 14 jaar op een speelse en creatieve manier kennis met programmeren en technologie."
+summary: "Een dag vol programmeren, robots en technologie bij OpenValue, in de Werkspoorkathedraal in Utrecht."
 date: 2025-11-11
 eventDate: 2025-11-30
+city: Utrecht
+host: OpenValue
+location:
+  name: "Werkspoorkathedraal"
+  note: "Studio N"
+  address: "Tractieweg 41"
+  postcode: "3534 AP"
+startTime: "09:30"
+endTime: "16:00"
+ages: 8 t/m 14 jaar
 author: svermeer
+modules: [minecraft, microbit, mbot2]
+programma:
+  - tijd: "09:30"
+    titel: Ontvangst
+    tekst: Je komt binnen en zoekt je plek. Om 10:00 gaan we officieel van start.
+  - tijd: "10:30"
+    titel: Workshop ronde 1
+    tekst: Je eerste workshop begint. Nu ga je zelf aan de slag.
+  - tijd: "12:00"
+    titel: Lunch
+    tekst: Wij zorgen voor de lunch.
+  - tijd: "12:30"
+    titel: Workshop ronde 2
+    tekst: Tijd voor je tweede workshop.
+  - tijd: "14:00"
+    titel: Workshop ronde 3
+    tekst: Na een korte pauze om 13:45 begint je laatste workshop.
+  - tijd: "15:15"
+    titel: Afsluiting en presentatie
+    tekst: Om 15:30 laat je aan je ouders zien wat je hebt gemaakt.
+  - tijd: "16:00"
+    titel: Einde
+    tekst: De dag is voorbij. Je gaat naar huis met iets dat je zelf hebt gemaakt.
 category: events
-image: /images/events/20251130-Utrecht-OpenValue.jpeg
-imageWidth: 75
+flyer: /images/events/20251130-Utrecht-OpenValue.jpeg
 thumbnail: /images/events/20251130-Utrecht-OpenValue.gif
-
 ---
-
-Kinderen ontdekken bij Devoxx4Kids de wereld van programmeren, robots en technologie via leuke en leerzame workshops.  
-Tijdens Devoxx4Kids maken kinderen van ongeveer 8 tot 14 jaar op een speelse en creatieve manier kennis met programmeren en technologie. Ze volgen drie workshops waarin ze zelf aan de slag gaan:   
-- Programmeren in Minecraft – Bouw, automatiseer en ontdek de logica achter de blokken  
-- Micro:bit – Programmeer je eigen mini-computer met sensoren en interactieve opdrachten  
-- Mbot 2 – Leer hoe robots werken en laat je eigen robot bewegen, reageren en opdrachten uitvoeren  
-
-We starten de dag om 9:30 in Studio N van de Werkspoorkathedraal (Utrecht). Na een gezamenlijke opening gaan de kinderen in drie rondes aan de slag. Rond 12:00 verzorgen wij de lunch. Na de laatste workshopronde sluiten we af met een presentatie om 15:30, waar ouders welkom zijn om te zien wat de kinderen hebben gemaakt. De dag eindigt rond 16:00.  
-
-**Dagindeling**  
-9:30 – Ontvangst  
-10:00 – Officiële start  
-10:30 – Workshop ronde 1  
-12:00 – Lunch  
-12:30 – Workshop ronde 2  
-13:45 – Pauze  
-14:00 – Workshop ronde 3  
-15:15 – Afsluiting  
-15:30 – Presentatie voor ouders  
-16:00 – Einde  
-
-**Locatie**  
-Werkspoorkathedraal – Studio N  
-41 Tractieweg  
-3534 AP Utrecht  

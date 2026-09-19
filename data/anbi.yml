@@ -1,0 +1,38 @@
+# What the foundation publishes as an ANBI. Shared details (address, KvK, RSIN, board) come from data/stichting.yml.
+activities: Studiebegeleiding, vorming en onderwijs. Het organiseren van activiteiten rondom coderen en programmeren met kinderen.
+goal: Het organiseren van activiteiten om kinderen in de leeftijdsgroep van 8 tot 14 jaar op een leuke manier te leren coderen en programmeren.
+approach:
+  - Organisatie van Devoxx4Kids-dagen bij bedrijven
+  - Bemiddeling tussen vrijwilligers en scholen voor het leveren van gratis gastlessen in de klas
+sector:
+  - "85 – Onderwijs"
+  - "855 – Overig onderwijs"
+  - "8559 – Overig onderwijs rest"
+organisation:
+  management: Nee          # directie / dagelijks bestuur
+  staff: Nee               # personen in dienst
+  supervisory: Nee         # raad van commissarissen / toezicht
+  board_paid: Nee          # beloning bestuurders
+contact_email: eddy.vos@devoxx4kids.nl
+# Newest year first. Leave a document out when it is not published; the page shows a dash.
+finance:
+  - year: 2025
+    report: /documents/Financieel-jaarverslag-2025.pdf
+    details: /documents/Financieel-jaarverslag-2025-details.pdf
+  - year: 2024
+    report: /documents/FinancieelJaarverslag2024.pdf
+    details: /documents/Financieeljaarverslag2024-details.pdf
+  - year: 2023
+    report: /documents/FinancieelJaarverslag2023.pdf
+policy_plan:
+  title: Beleidsplan 2022
+  url: /documents/Beleidsplan-2022.docx_.pdf
+activity_report: ""        # actueel verslag activiteiten
+audience: Jeugd 8 – 14 jaar
+region: Alleen Nederland
+size: Tot € 50.000
+social:
+  - label: Twitter
+    value: "@devoxx4kidsnl"
+  - label: Facebook
+    value: https://www.facebook.com/Littil-108387778343588

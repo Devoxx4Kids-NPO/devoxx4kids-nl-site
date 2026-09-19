@@ -1,0 +1,10 @@
+{{ define "main" }}
+<h1 class="page-title">{{ .Title }}</h1>
+<div class="prose intro">
+  {{ .Content }}
+</div>
+
+<div class="workshop-grid page-section">
+  {{ range .Pages.ByWeight }}{{ partial "module-card.html" . }}{{ end }}
+</div>
+{{ end }}

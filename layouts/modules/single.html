@@ -1,0 +1,57 @@
+{{ define "main" }}
+{{ $id := .File.ContentBaseName }}
+{{ $events := slice }}
+{{ range where site.RegularPages "Section" "events" }}
+  {{ if in .Params.modules $id }}{{ $events = $events | append . }}{{ end }}
+{{ end }}
+
+<p class="back-link"><a href="{{ "/modules/" | relURL }}">Alle modules</a></p>
+
+<header class="module-head">
+  <div>
+    <span class="d4k-workshop__tool">{{ .Params.tool }}</span>
+    <h1 class="page-title">{{ .Title }}</h1>
+    <p class="intro">{{ .Params.summary }}</p>
+  </div>
+  {{ with .Params.image }}
+    <div class="d4k-workshop__art module-head__art">
+      <img src="{{ printf "images/illustrations/%s" . | relURL }}" alt="Tekening: {{ $.Params.tool }}" width="240" height="180">
+    </div>
+  {{ end }}
+</header>
+
+{{ with .Params.requirements }}
+<section class="page-section" aria-labelledby="h-nodig">
+  <h2 class="section-title" id="h-nodig">Wat is er nodig?</h2>
+  <ul class="check-list">
+    {{ range . }}<li>{{ . }}</li>{{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ with .Params.links }}
+<section class="page-section" aria-labelledby="h-links">
+  <h2 class="section-title" id="h-links">Lesmateriaal en links</h2>
+  <ul class="link-list">
+    {{ range . }}
+      <li><a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .title }}</a></li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ with .Content }}
+<section class="page-section prose">
+  {{ . }}
+</section>
+{{ end }}
+
+{{ with $events }}
+<section class="page-section" aria-labelledby="h-events">
+  <h2 class="section-title" id="h-events">Op deze events</h2>
+  <div class="event-list">
+    {{ range sort . ".Params.eventDate" "desc" }}{{ partial "event-card.html" . }}{{ end }}
+  </div>
+</section>
+{{ end }}
+{{ end }}

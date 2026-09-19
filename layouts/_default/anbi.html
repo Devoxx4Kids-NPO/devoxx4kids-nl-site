@@ -1,0 +1,106 @@
+{{ define "main" }}
+{{ $s := hugo.Data.stichting }}
+{{ $a := hugo.Data.anbi }}
+{{ partial "page-header.html" (dict "eyebrow" "Verantwoording" "title" .Title "lead" .Params.summary) }}
+
+<nav class="toc" aria-label="Op deze pagina">
+  <p class="toc__label">Op deze pagina</p>
+  <ul>
+    <li><a href="#algemeen">Algemene informatie</a></li>
+    <li><a href="#doel">Doel en activiteiten</a></li>
+    <li><a href="#bestuur">Bestuur en organisatie</a></li>
+    <li><a href="#financieel">Financiële verantwoording</a></li>
+    <li><a href="#beleid">Beleid en overig</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-section anbi-section" id="algemeen" aria-labelledby="h-algemeen">
+  <h2 class="section-title" id="h-algemeen">Algemene informatie</h2>
+  <dl class="kv">
+    <dt>Rechtsvorm</dt><dd>{{ $s.legal_form }}</dd>
+    <dt>Statutaire naam</dt><dd>{{ $s.name }}</dd>
+    <dt>Handelsnaam</dt><dd>{{ $s.name }}</dd>
+    <dt>Statutaire zetel</dt><dd>{{ $s.seat }}</dd>
+    <dt>KvK-nummer</dt><dd>{{ $s.kvk }}</dd>
+    <dt>RSIN</dt><dd>{{ $s.rsin }}</dd>
+    <dt>Website</dt><dd><a href="{{ $s.website }}">{{ strings.TrimPrefix "https://" $s.website }}</a></dd>
+  </dl>
+</section>
+
+<section class="page-section anbi-section" id="doel" aria-labelledby="h-doel">
+  <h2 class="section-title" id="h-doel">Doel en activiteiten</h2>
+  <dl class="kv">
+    <dt>Doelstelling</dt><dd>{{ $a.goal }}</dd>
+    <dt>Activiteiten</dt><dd>{{ $a.activities }}</dd>
+    <dt>Hoe we het doel bereiken</dt>
+    <dd><ul class="kv__list">{{ range $a.approach }}<li>{{ . }}</li>{{ end }}</ul></dd>
+    <dt>Sector</dt>
+    <dd><ul class="kv__list">{{ range $a.sector }}<li>{{ . }}</li>{{ end }}</ul></dd>
+  </dl>
+</section>
+
+<section class="page-section anbi-section" id="bestuur" aria-labelledby="h-bestuur">
+  <h2 class="section-title" id="h-bestuur">Bestuur en organisatie</h2>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th scope="col">Naam</th><th scope="col">Functie</th><th scope="col">Beloning</th></tr></thead>
+      <tbody>
+        {{ range $s.board }}
+          <tr><td>{{ .legal_name | default .name }}</td><td>{{ .role }}</td><td>{{ $a.organisation.board_paid }}</td></tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+  <dl class="kv kv--compact">
+    <dt>Aantal bestuursleden</dt><dd>{{ len $s.board }}</dd>
+    <dt>Directie of dagelijks bestuur</dt><dd>{{ $a.organisation.management }}</dd>
+    <dt>Personen in dienst</dt><dd>{{ $a.organisation.staff }}</dd>
+    <dt>Raad van toezicht</dt><dd>{{ $a.organisation.supervisory }}</dd>
+  </dl>
+</section>
+
+<section class="page-section anbi-section" id="financieel" aria-labelledby="h-financieel">
+  <h2 class="section-title" id="h-financieel">Financiële verantwoording</h2>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th scope="col">Jaar</th><th scope="col">Balans en staat van baten en lasten</th><th scope="col">Staat van baten en lasten, details</th><th scope="col">Standaardformulier publicatieplicht</th></tr>
+      </thead>
+      <tbody>
+        {{ range $a.finance }}
+          {{ $year := .year }}
+          <tr>
+            <th scope="row">{{ .year }}</th>
+            <td>{{ with .report }}<a href="{{ . | relURL }}">Jaarverslag {{ $year }}</a> <span class="doc-list__type">PDF</span>{{ else }}—{{ end }}</td>
+            <td>{{ with .details }}<a href="{{ . | relURL }}">Details</a> <span class="doc-list__type">PDF</span>{{ else }}—{{ end }}</td>
+            <td>{{ with .form }}<a href="{{ . | relURL }}">Formulier</a> <span class="doc-list__type">PDF</span>{{ else }}—{{ end }}</td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="page-section anbi-section" id="beleid" aria-labelledby="h-beleid">
+  <h2 class="section-title" id="h-beleid">Beleid en overig</h2>
+  <dl class="kv">
+    <dt>Beleidsplan</dt><dd>{{ with $a.policy_plan }}<a href="{{ .url | relURL }}">{{ .title }}</a> <span class="doc-list__type">PDF</span>{{ else }}—{{ end }}</dd>
+    <dt>Actueel verslag activiteiten</dt><dd>{{ with $a.activity_report }}<a href="{{ . | relURL }}">Verslag</a>{{ else }}—{{ end }}</dd>
+    <dt>Doelgroep</dt><dd>{{ $a.audience }}</dd>
+    <dt>Werkgebied</dt><dd>{{ $a.region }}</dd>
+    <dt>Omvang (omzet)</dt><dd>{{ $a.size }}</dd>
+    {{ range $a.social }}<dt>{{ .label }}</dt><dd>{{ if hasPrefix .value "http" }}<a href="{{ .value }}" target="_blank" rel="noopener noreferrer">{{ .value }}</a>{{ else }}{{ .value }}{{ end }}</dd>{{ end }}
+  </dl>
+</section>
+
+<section class="page-section anbi-section" id="contact" aria-labelledby="h-contact">
+  <h2 class="section-title" id="h-contact">Contact</h2>
+  <dl class="kv">
+    <dt>Bezoekadres</dt><dd>{{ $s.address }}<br>{{ $s.postcode }} {{ upper $s.city }}</dd>
+    <dt>Postadres</dt><dd>{{ $s.address }}<br>{{ $s.postcode }} {{ upper $s.city }}</dd>
+    <dt>Telefoon</dt><dd><a href="tel:{{ replaceRE `[^+0-9]` "" (replace $s.phone "(0)" "") }}">{{ $s.phone }}</a></dd>
+    <dt>E-mail</dt><dd><a href="mailto:{{ $a.contact_email }}">{{ $a.contact_email }}</a></dd>
+  </dl>
+</section>
+{{ end }}

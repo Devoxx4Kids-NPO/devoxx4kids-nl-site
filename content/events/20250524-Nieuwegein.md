@@ -1,36 +1,43 @@
 ---
 title: Devoxx4kids op 24 mei 2025 in Nieuwegein
-summary: "Op 24 mei 2025 organiseerde Open Web voor de 11e keer een Devoxx4kids event."
+summary: "Open Web organiseerde voor de 11e keer een Devoxx4Kids-dag. Kinderen gingen aan de slag met AI, websites en de micro:bit."
 date: 2025-03-06
 eventDate: 2025-05-24
+city: Nieuwegein
+host: Open Web
+location:
+  name: "Open Web IT"
+  address: "Nevelgaarde 20G"
+  postcode: "3436 ZZ"
+startTime: "10:00"
+endTime: "16:00"
+contact: devoxx4kids@openweb.nl
 author: svermeer
+modules: [ai, website, microbit]
+programma:
+  - tijd: "10:00"
+    titel: Binnenkomst
+    tekst: Je komt binnen met je ouders. Om 10:30 is het openingswoord, daarna nemen we afscheid van alle ouders.
+  - tijd: "10:50"
+    titel: Workshop 1
+    tekst: Je volgt je eerste workshop.
+  - tijd: "12:05"
+    titel: Lunch
+    tekst: Wij zorgen voor een lekkere lunch.
+  - tijd: "12:40"
+    titel: Workshop 2
+    tekst: Je volgt je tweede workshop.
+  - tijd: "13:55"
+    titel: Pauze
+    tekst: Korte pauze, er staat een lekker tussendoortje klaar.
+  - tijd: "14:15"
+    titel: Workshop 3
+    tekst: Je volgt je laatste workshop.
+  - tijd: "15:30"
+    titel: Afsluiten
+    tekst: Je laat aan je ouders zien wat je hebt gebouwd.
 category: events
-image: /images/events/20250524-Nieuwegein-OpenWeb-300x150.jpg
-imageWidth: 75
+photo: /images/events/20250524-Nieuwegein-OpenWeb-300x150.jpg
+photoWidth: 75
 thumbnail: /images/events/20250524-Nieuwegein-OpenWeb-300x150.gif
-
 ---
-
-Op 24 mei organiseert Open Web alweer voor de 11e keer een Devoxx4kids programmeerevenement! Heb je vragen of wil je op de hoogte gehouden worden van toekomstige evenementen? Stuur een mail naar devoxx4kids@openweb.nl.  
-
-**Wat je gaat doen**  
-Je gaat in drie workshops aan de slag onder begeleiding van ervaren programmeurs.  
-
-- Programmeer met AI
-- Maak je eigen website
-- Ontdek de kracht van slimme elektronica met de BBC micro:bit
-
-**Het programma**  
-10:00 – 10:25 Je komt binnen met je ouders  
-10.30 – 10:45 Openingswoord, daarna nemen we afscheid van alle ouders  
-10:50 – 12:00 Je volgt je eerste workshop  
-12:05 – 12:35 Wij zorgen voor een lekkere lunch  
-12:40 – 13:50 Je volgt een workshop  
-13:55 – 14:10 Korte pauze, er staat een lekker tussendoortje klaar  
-14:15 – 15:25 Je volgt je laatste workshop  
-15:30 – 16:00 Afsluiten, jullie laten aan je ouders zien wat jullie gebouwd hebben  
-
-**Locatie**  
-Open Web IT  
-Nevelgaarde 20G  
-3436 ZZ Nieuwegein  

@@ -1,0 +1,28 @@
+{{- /* The organiser's flyer with context. Pass a dict: "page" (the event), "past" (bool), "compact" (bool: beside the day schedule, no heading of its own). */ -}}
+{{ $p := .page }}
+{{ with $p.Params.flyer }}
+{{ $flyer := . }}
+{{ $who := $p.Params.host | default "De organisatie" }}
+{{ $text := printf "%s maakte deze flyer voor het event." $who }}
+{{ if not $.past }}{{ $text = printf "%s Hang hem op school of in de buurt, of stuur hem door naar andere ouders." $text }}{{ end }}
+{{ $img := printf `<a class="flyer__image" href="%s" target="_blank" rel="noopener noreferrer"><img src="%s" alt="Flyer van Devoxx4Kids %s, gemaakt door %s" loading="lazy"></a>` $flyer $flyer $p.Params.city $who }}
+{{ $button := printf `<a class="d4k-btn d4k-btn--secondary" href="%s" target="_blank" rel="noopener noreferrer">Open de flyer<span class="d4k-sr"> (opent een nieuw venster)</span></a>` $flyer }}
+{{ if $.compact }}
+  <aside class="flyer flyer--compact" aria-label="Flyer">
+    {{ $img | safeHTML }}
+    <p class="flyer__caption">{{ $text }}</p>
+    {{ $button | safeHTML }}
+  </aside>
+{{ else }}
+  <section class="page-section" aria-labelledby="h-flyer">
+    <h2 class="section-title" id="h-flyer">De flyer</h2>
+    <div class="flyer">
+      {{ $img | safeHTML }}
+      <div class="flyer__text">
+        <p class="intro">{{ $text }}</p>
+        {{ $button | safeHTML }}
+      </div>
+    </div>
+  </section>
+{{ end }}
+{{ end }}

@@ -1,0 +1,32 @@
+# Official details of the foundation, used on the Stichting page (and anywhere else they are needed).
+name: Stichting Devoxx4Kids Nederland
+legal_form: Stichting
+seat: Haarlem          # statutaire zetel
+website: https://www.devoxx4kids.nl
+address: Lutulistate 41
+postcode: 6716 NT
+city: Ede
+phone: "+31 (0)6 48 34 21 97"
+email: info@devoxx4kids.nl
+kvk: "61634751"
+rsin: "854422961"
+iban: NL52 ABNA 0539 2769 44
+board:
+  - name: Eddy Vos
+    role: Voorzitter
+    email: eddy.vos@devoxx4kids.nl
+  - name: Saskia Vermeer-Ooms
+    role: Secretaris
+    email: saskia.vermeer.ooms@devoxx4kids.nl
+  - name: Marcel Wildenburg
+    legal_name: Marcus Johannes Adriana Wildenburg   # as registered; shown on the ANBI page
+    role: Penningmeester
+    email: marcel.wildenburg@devoxx4kids.nl
+  - name: Pepijn Schildkamp
+    role: Bestuurslid
+    email: pepijn.schildkamp@devoxx4kids.nl
+documents:
+  - title: Financieel jaarverslag 2025
+    url: /documents/Financieel-jaarverslag-2025.pdf
+  - title: Beleidsplan 2022
+    url: /documents/Beleidsplan-2022.docx_.pdf

@@ -1,0 +1,111 @@
+{{ define "main" }}
+{{ $modules := (site.GetPage "/modules").Pages }}
+{{ $events := where site.RegularPages "Section" "events" }}
+{{ $cities := slice }}
+{{ range hugo.Data.d4k_events }}{{ $cities = $cities | append .name }}{{ end }}
+{{ $cities = $cities | uniq | sort }}
+
+<section class="d4k-hero d4k-hero--art d4k-hero--scene">
+  <div>
+    <p class="d4k-hero__eyebrow">Over ons</p>
+    <h1 class="d4k-hero__title">Wij zijn Devoxx4Kids Nederland</h1>
+    {{ with .Params.summary }}<p class="d4k-hero__lead">{{ . }}</p>{{ end }}
+    <div class="d4k-hero__actions">
+      <a class="d4k-btn d4k-btn--secondary d4k-btn--lg" href="#doe-mee">Doe mee</a>
+    </div>
+  </div>
+  <img class="d4k-hero__art" src="{{ "images/illustrations/gastles.svg" | relURL }}" alt="" width="480" height="300">
+</section>
+
+<ul class="stats" aria-label="Devoxx4Kids Nederland in cijfers">
+  <li class="stats__item"><span class="stats__value">8 t/m 14</span><span class="stats__label">jaar oud zijn de kinderen</span></li>
+  <li class="stats__item"><span class="stats__value">{{ len $modules }}</span><span class="stats__label">modules, van robots tot muziek</span></li>
+  <li class="stats__item"><span class="stats__value">{{ len $cities }}</span><span class="stats__label">steden met een Devoxx4Kids-event</span></li>
+</ul>
+
+<section class="page-section about-intro" aria-labelledby="h-wie">
+  <div class="prose">
+    <h2 class="section-title" id="h-wie">Wie we zijn</h2>
+    {{ .Content }}
+  </div>
+  <div class="d4k-card">
+    <h3 class="d4k-card__title">Zo werken we</h3>
+    <ol class="how-list">
+      <li><strong>Bedrijven hosten.</strong> Een bedrijf stelt een locatie beschikbaar en organiseert een Devoxx4Kids-dag.</li>
+      <li><strong>Vrijwilligers geven les.</strong> Mensen uit de IT begeleiden de kinderen bij de workshops.</li>
+      <li><strong>De stichting verbindt.</strong> Scholen die een gastles willen, brengen we in contact met een vrijwilliger bij hen in de buurt.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="page-section" aria-labelledby="h-watwedoen">
+  <h2 class="section-title" id="h-watwedoen">Wat we doen</h2>
+  <div class="about-grid">
+    <a class="d4k-workshop" href="{{ "/events/" | relURL }}">
+      <div class="d4k-workshop__art d4k-workshop__art--fixed"><img src="{{ "images/illustrations/mbot2.svg" | relURL }}" alt="" width="240" height="180" loading="lazy"></div>
+      <h3 class="d4k-workshop__title">Devoxx4Kids-dagen</h3>
+      <p class="d4k-workshop__body">Een hele dag workshops bij een bedrijf, in het weekend of in de schoolvakantie. Aan het eind laat je aan je ouders zien wat je hebt gemaakt.</p>
+      <span class="d4k-workshop__more" aria-hidden="true">Bekijk de events</span>
+    </a>
+    <a class="d4k-workshop" href="{{ "/posts/gastlessen/" | relURL }}">
+      <div class="d4k-workshop__art d4k-workshop__art--fixed"><img src="{{ "images/illustrations/microbit.svg" | relURL }}" alt="" width="240" height="180" loading="lazy"></div>
+      <h3 class="d4k-workshop__title">Gastlessen op school</h3>
+      <p class="d4k-workshop__body">Vrijwilligers komen naar school en geven een les programmeren, in één ochtend of middag.</p>
+      <span class="d4k-workshop__more" aria-hidden="true">Meer over gastlessen</span>
+    </a>
+    <a class="d4k-workshop" href="{{ "/modules/" | relURL }}">
+      <div class="d4k-workshop__art d4k-workshop__art--fixed"><img src="{{ "images/illustrations/scratch.svg" | relURL }}" alt="" width="240" height="180" loading="lazy"></div>
+      <h3 class="d4k-workshop__title">Modules</h3>
+      <p class="d4k-workshop__body">{{ len $modules }} modules: bouw een spel, programmeer een robot of maak muziek met code.</p>
+      <span class="d4k-workshop__more" aria-hidden="true">Bekijk de modules</span>
+    </a>
+  </div>
+</section>
+
+<section class="page-section" aria-labelledby="h-waar">
+  <h2 class="section-title" id="h-waar">Waar we zijn geweest</h2>
+  <div class="places">
+    {{ partial "event-map.html" . }}
+    <div class="places__list">
+      <p class="places__intro">Devoxx4Kids-events zijn gehouden, of worden nog gehouden, in deze {{ len $cities }} steden.</p>
+      <ul class="city-list">
+        {{ range $cities }}
+          {{ $city := . }}
+          {{ $cityEvents := where $events "Params.city" $city }}
+          <li>
+            {{ with $cityEvents }}
+              {{ $latest := index (sort . ".Params.eventDate" "desc") 0 }}
+              <a class="city-list__link" href="{{ $latest.RelPermalink }}">{{ $city }}</a>
+              <span class="city-list__meta">{{ time.Format "January 2006" $latest.Params.eventDate }}</span>
+            {{ else }}
+              <span class="city-list__name">{{ $city }}</span>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="doe-mee" aria-labelledby="h-doemee">
+  <h2 class="section-title" id="h-doemee">Doe mee</h2>
+  <div class="join-grid">
+    <div class="d4k-card join">
+      <h3 class="d4k-card__title">Voor kinderen en ouders</h3>
+      <p class="d4k-card__body">Kom naar een Devoxx4Kids-dag bij jou in de buurt en ga zelf aan de slag.</p>
+      <a class="d4k-btn d4k-btn--primary" href="{{ "/events/" | relURL }}">Bekijk de events</a>
+    </div>
+    <div class="d4k-card join">
+      <h3 class="d4k-card__title">Voor scholen</h3>
+      <p class="d4k-card__body">Vraag een gastles aan. Een vrijwilliger komt naar jullie school.</p>
+      <a class="d4k-btn d4k-btn--secondary" href="{{ "/posts/gastlessen/" | relURL }}">Gastlessen</a>
+    </div>
+    <div class="d4k-card join">
+      <h3 class="d4k-card__title">Voor bedrijven</h3>
+      <p class="d4k-card__body">Host een Devoxx4Kids-dag, word partner of laat je medewerkers meedoen als vrijwilliger.</p>
+      <a class="d4k-btn d4k-btn--secondary" href="{{ "/pages/partners/" | relURL }}">Partner worden</a>
+    </div>
+  </div>
+  <p class="about-links">Meer over <a href="{{ "/pages/stichting-d4k/" | relURL }}">de stichting en het bestuur</a> en onze <a href="{{ "/pages/anbi/" | relURL }}">ANBI-gegevens</a>.</p>
+</section>
+{{ end }}

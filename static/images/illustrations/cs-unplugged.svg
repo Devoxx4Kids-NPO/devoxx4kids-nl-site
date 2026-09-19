@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Kaarten met stippen en een potlood">
+  <!-- Cartoon binary dot cards and a pencil, for the CS Unplugged module (computer science without a computer). -->
+  <ellipse cx="120" cy="166" rx="100" ry="9" fill="#040707" opacity="0.15"/>
+  <g stroke="#040707" stroke-width="4" stroke-linejoin="round">
+    <rect x="20" y="42" width="58" height="84" rx="8" fill="#ffffff" transform="rotate(-8 49 84)"/>
+    <rect x="90" y="34" width="58" height="84" rx="8" fill="#ffffff"/>
+    <rect x="160" y="42" width="58" height="84" rx="8" fill="#dedfe0" transform="rotate(8 189 84)"/>
+  </g>
+  <!-- dots: 4, 2, 1 -->
+  <g fill="#f2a426" stroke="#040707" stroke-width="3">
+    <g transform="rotate(-8 49 84)"><circle cx="38" cy="70" r="8"/><circle cx="60" cy="70" r="8"/><circle cx="38" cy="96" r="8"/><circle cx="60" cy="96" r="8"/></g>
+    <circle cx="119" cy="62" r="8"/><circle cx="119" cy="90" r="8"/>
+  </g>
+  <g transform="rotate(8 189 84)"><circle cx="189" cy="84" r="8" fill="#ffffff" stroke="#040707" stroke-width="3" stroke-dasharray="4 4"/></g>
+  <!-- digits under the cards -->
+  <g font-family="Outfit, Nunito, Arial, sans-serif" font-weight="700" font-size="20" fill="#040707" text-anchor="middle">
+    <text x="52" y="148">1</text><text x="119" y="140">1</text><text x="186" y="148">0</text>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+{{- /* Grid of module cards. Pass a dict with "pages" (module pages), "title", optional "lead" and optional "more" (link to all modules). */ -}}
+{{ with .pages }}
+<section class="page-section" aria-labelledby="h-modules">
+  <h2 class="section-title" id="h-modules">{{ $.title }}</h2>
+  {{ with $.lead }}<p class="intro">{{ . }}</p>{{ end }}
+  <div class="workshop-grid">
+    {{ range . }}{{ partial "module-card.html" . }}{{ end }}
+  </div>
+  {{ if $.more }}<p><a href="{{ "/modules/" | relURL }}">Bekijk alle modules</a></p>{{ end }}
+</section>
+{{ end }}

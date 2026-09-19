@@ -1,12 +1,11 @@
 baseURL = 'https://Devoxx4Kids-NPO.github.io/'
-locale = 'en-us'
-title = 'Devoxx4Kids website'
+locale = 'nl-NL'
+title = 'Devoxx4Kids Nederland'
 
 [params]
   name = 'Stichting Devoxx4kids Nederland'
-  logo = "images/DevoxxWithoutBrackets_PNG_1000px.png"
-  logoAlt = "Devoxx4kids logo"
-  logoWidth = "300px" #optional: control size
+  logo = "images/d4k-nl-horizontal.png"
+  logoAlt = "Devoxx4Kids Netherlands"
   
 
 [menu]
@@ -24,7 +23,7 @@ title = 'Devoxx4Kids website'
    weight = 3
 [[menu.main]]
    name = "Modules"
-   url = "/pages/modules/"
+   url = "/modules/"
    weight = 4
 [[menu.main]]
    name = "Stichting Devoxx4KidsNL"

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="micro:bit">
+  <!-- Cartoon micro:bit: dark board, 5x5 LED smile in brand orange, buttons A and B, amber edge pins. -->
+  <ellipse cx="120" cy="166" rx="96" ry="9" fill="#040707" opacity="0.15"/>
+  <path d="M34 22 H206 A14 14 0 0 1 220 36 V150 H20 V36 A14 14 0 0 1 34 22 Z" fill="#3a3f44" stroke="#040707" stroke-width="4"/>
+  <path d="M36 34 Q38 30 46 30" fill="none" stroke="#6f7479" stroke-width="4" stroke-linecap="round"/>
+  <!-- buttons -->
+  <g stroke="#040707" stroke-width="4">
+    <rect x="34" y="66" width="36" height="36" rx="8" fill="#a5a7aa"/>
+    <circle cx="52" cy="84" r="10" fill="#040707"/>
+    <rect x="170" y="66" width="36" height="36" rx="8" fill="#a5a7aa"/>
+    <circle cx="188" cy="84" r="10" fill="#040707"/>
+  </g>
+  <g font-family="Outfit, Nunito, Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff" text-anchor="middle">
+    <text x="52" y="60">A</text>
+    <text x="188" y="60">B</text>
+  </g>
+  <!-- 5x5 LED grid: lit LEDs draw a smile -->
+  <g stroke="#040707" stroke-width="2">
+    <g fill="#5a5a5a"><rect x="84" y="34" width="10" height="12" rx="2"/><rect x="100" y="34" width="10" height="12" rx="2"/><rect x="116" y="34" width="10" height="12" rx="2"/><rect x="132" y="34" width="10" height="12" rx="2"/><rect x="148" y="34" width="10" height="12" rx="2"/><rect x="84" y="51" width="10" height="12" rx="2"/><rect x="116" y="51" width="10" height="12" rx="2"/><rect x="148" y="51" width="10" height="12" rx="2"/><rect x="84" y="68" width="10" height="12" rx="2"/><rect x="100" y="68" width="10" height="12" rx="2"/><rect x="116" y="68" width="10" height="12" rx="2"/><rect x="132" y="68" width="10" height="12" rx="2"/><rect x="148" y="68" width="10" height="12" rx="2"/><rect x="100" y="85" width="10" height="12" rx="2"/><rect x="116" y="85" width="10" height="12" rx="2"/><rect x="132" y="85" width="10" height="12" rx="2"/><rect x="84" y="102" width="10" height="12" rx="2"/><rect x="148" y="102" width="10" height="12" rx="2"/></g>
+    <g fill="#f2a426"><rect x="100" y="51" width="10" height="12" rx="2"/><rect x="132" y="51" width="10" height="12" rx="2"/><rect x="84" y="85" width="10" height="12" rx="2"/><rect x="148" y="85" width="10" height="12" rx="2"/><rect x="100" y="102" width="10" height="12" rx="2"/><rect x="116" y="102" width="10" height="12" rx="2"/><rect x="132" y="102" width="10" height="12" rx="2"/></g>
+  </g>
+  <!-- edge connector: five big pins along the bottom edge -->
+  <g fill="#e2a02e" stroke="#040707" stroke-width="3">
+    <rect x="30" y="122" width="26" height="28" rx="4"/>
+    <rect x="72" y="122" width="26" height="28" rx="4"/>
+    <rect x="107" y="122" width="26" height="28" rx="4"/>
+    <rect x="142" y="122" width="26" height="28" rx="4"/>
+    <rect x="184" y="122" width="26" height="28" rx="4"/>
+  </g>
+  <g fill="#040707"><circle cx="43" cy="133" r="5"/><circle cx="85" cy="133" r="5"/><circle cx="120" cy="133" r="5"/><circle cx="155" cy="133" r="5"/><circle cx="197" cy="133" r="5"/></g>
+  <path d="M20 150 H220" stroke="#040707" stroke-width="4" stroke-linecap="round"/>
+</svg>

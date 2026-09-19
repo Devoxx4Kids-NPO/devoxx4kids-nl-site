@@ -1,8 +1,28 @@
 {{ define "main" }}
-<h1>{{ .Params.Title }}</h1>
-{{ .Content }}
+<section class="d4k-hero d4k-hero--art">
+  <div>
+    <p class="d4k-hero__eyebrow">{{ site.Params.name }}</p>
+    <h1 class="d4k-hero__title">Inspireren met programmeren (en robots!)</h1>
+    <p class="d4k-hero__lead">Programmeerdagen en gastlessen voor kinderen van 8 t/m 14 jaar, gegeven door vrijwilligers uit de IT.</p>
+    <div class="d4k-hero__actions">
+      <a class="d4k-btn d4k-btn--secondary d4k-btn--lg" href="{{ "/events/" | relURL }}">Bekijk de events</a>
+      <a class="d4k-btn d4k-btn--ghost d4k-btn--lg" href="{{ "/posts/gastlessen/" | relURL }}">Gastlessen</a>
+    </div>
+  </div>
+  <img class="d4k-hero__art" src="{{ "images/illustrations/mbot2.svg" | relURL }}" alt="" width="240" height="180">
+</section>
 
-<h2>Komende events</h2>
+<section class="page-section prose intro">
+  {{ .Content }}
+</section>
+
 {{ partial "events-home-page.html" . }}
 
+{{ with site.GetPage "/modules" }}
+  {{ partial "module-grid.html" (dict
+    "pages" (first 6 .Pages.ByWeight)
+    "title" "Dit kun je doen bij Devoxx4Kids"
+    "lead" "Welke workshops er zijn, verschilt per event. Je ziet ze op de pagina van het event."
+    "more" true) }}
+{{ end }}
 {{ end }}

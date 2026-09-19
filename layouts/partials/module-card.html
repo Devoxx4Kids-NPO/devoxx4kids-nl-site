@@ -1,0 +1,13 @@
+{{- /* WorkshopCard from the design system for one module page (content/modules/*.md).
+       The whole tile links to the module's detail page. */ -}}
+<a class="d4k-workshop" href="{{ .RelPermalink }}">
+  {{ with .Params.image }}
+    <div class="d4k-workshop__art">
+      <img src="{{ printf "images/illustrations/%s" . | relURL }}" alt="" width="240" height="180" loading="lazy">
+    </div>
+  {{ end }}
+  <span class="d4k-workshop__tool">{{ .Params.tool }}</span>
+  <h3 class="d4k-workshop__title">{{ .Title }}</h3>
+  <p class="d4k-workshop__body">{{ .Params.summary }}</p>
+  <span class="d4k-workshop__more" aria-hidden="true">Meer over deze module</span>
+</a>

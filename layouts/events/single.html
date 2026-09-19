@@ -1,14 +1,78 @@
 {{ define "main" }}
-  {{ if .Params.image }}
-    <div class="post-featured-image">
-      <img src="{{ .Params.image }}"
-           alt="{{ .Title }}"
-           style="width: {{ .Params.imageWidth | default 100 }}%;"
-      />
-    </div>
+{{ $date := time .Params.eventDate }}
+{{ $past := lt $date now }}
+{{ $eyebrow := time.Format "Monday 2 January 2006" $date }}
+{{ with .Params.city }}{{ $eyebrow = printf "%s · %s" $eyebrow . }}{{ end }}
+{{ $title := .Title }}
+{{ with .Params.city }}{{ $title = printf "Devoxx4Kids %s" . }}{{ end }}
+{{ $canRegister := and (not $past) .Params.registration (ne .Params.status "vol") }}
+{{ $modules := partial "event-modules.html" . }}
+
+<section class="d4k-hero d4k-hero--event">
+  <div class="d4k-hero__main">
+    <p class="d4k-hero__eyebrow">{{ $eyebrow }}</p>
+    <h1 class="d4k-hero__title">{{ $title }}</h1>
+    {{ with .Params.summary }}<p class="d4k-hero__lead">{{ . }}</p>{{ end }}
+    {{ if $canRegister }}
+      <div class="d4k-hero__actions">
+        <a class="d4k-btn d4k-btn--secondary d4k-btn--lg" href="{{ .Params.registration }}" target="_blank" rel="noopener noreferrer">Meld je aan<span class="d4k-sr"> (opent een nieuw venster)</span></a>
+      </div>
+    {{ else if and (not $past) (eq .Params.status "vol") }}
+      <p class="d4k-hero__note"><span class="d4k-badge d4k-badge--danger">Vol</span> Dit event zit vol.</p>
+    {{ else if not $past }}
+      <p class="d4k-hero__note"><span class="d4k-badge d4k-badge--steel">Binnenkort</span> Aanmelden kan binnenkort. Kijk later nog eens op deze pagina.</p>
+    {{ end }}
+  </div>
+
+  {{ partial "event-facts.html" . }}
+</section>
+
+{{ if $past }}
+  <div class="d4k-alert d4k-alert--note" role="status">
+    <span class="d4k-alert__mark" aria-hidden="true">i</span>
+    <p class="d4k-alert__body">Dit event is al geweest. Bekijk de <a href="{{ "/events/" | relURL }}">komende events</a>.</p>
+  </div>
+{{ end }}
+
+{{ if $modules }}
+  {{ partial "module-grid.html" (dict
+    "pages" $modules
+    "title" (cond $past "Deze workshops waren er" "Wat ga je doen?")) }}
+{{ else if not $past }}
+  <section class="page-section" aria-labelledby="h-modules">
+    <h2 class="section-title" id="h-modules">Wat ga je doen?</h2>
+    <p class="intro">Welke workshops je kunt doen, maken we snel bekend. Bekijk alvast <a href="{{ "/modules/" | relURL }}">alle modules</a>.</p>
+  </section>
+{{ end }}
+
+{{ if and .Params.programma .Params.flyer }}
+  <div class="page-section programme-with-flyer">
+    {{ partial "day-programme.html" . }}
+    {{ partial "event-flyer.html" (dict "page" . "past" $past "compact" true) }}
+  </div>
+{{ else }}
+  {{ partial "day-programme.html" . }}
+  {{ partial "event-flyer.html" (dict "page" . "past" $past) }}
+{{ end }}
+
+{{ with .Params.photo }}
+<section class="page-section" aria-labelledby="h-photo">
+  <h2 class="section-title" id="h-photo">Een foto van de dag</h2>
+  <figure class="event-photo" style="max-width: {{ $.Params.photoWidth | default 100 }}%;">
+    <img class="photo" src="{{ . }}" alt="Kinderen aan het werk tijdens Devoxx4Kids {{ $.Params.city }}" loading="lazy">
+    <figcaption>Devoxx4Kids {{ $.Params.city }}{{ with $.Params.host }}, georganiseerd door {{ . }}{{ end }}.</figcaption>
+  </figure>
+</section>
+{{ end }}
+
+{{ $content := .Content }}
+{{ if or $content .Params.contact }}
+<section class="page-section" aria-labelledby="h-praktisch">
+  <h2 class="section-title" id="h-praktisch">Praktische informatie</h2>
+  {{ with $content }}<div class="prose">{{ . }}</div>{{ end }}
+  {{ with .Params.contact }}
+    <p class="intro">Vragen over dit event? Mail naar <a href="mailto:{{ . }}">{{ . }}</a>.</p>
   {{ end }}
-  
-  <h1>{{ .Params.Title }}</h1>
-  <p>{{ .Date.Format "2 Jan, 2006" }}</p>
-{{ .Content }}
+</section>
+{{ end }}
 {{ end }}
