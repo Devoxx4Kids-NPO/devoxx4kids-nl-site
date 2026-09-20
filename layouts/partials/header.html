@@ -4,33 +4,117 @@
       <img src="{{ site.Params.logo | relURL }}" alt="{{ site.Params.logoAlt | default "Devoxx4Kids Netherlands" }}" width="1066" height="375">
     </a>
 
-    <div class="site-header__actions">
+    {{- /* Only shown below the nav breakpoint; it folds the menu and the theme toggle away. */ -}}
+    <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-menu">
+      <span class="site-nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+
+    <div class="site-header__actions" id="site-menu">
       <nav class="site-nav" aria-label="Hoofdmenu">
-        <ul>
+        <ul class="site-nav__list">
           {{ $current := $.RelPermalink }}
           {{ range site.Menus.main }}
             {{ $url := .URL | relURL }}
-            {{ $active := cond (eq .URL "/") (eq $current $url) (hasPrefix $current $url) }}
-            <li><a href="{{ $url }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+            {{- /* Exact match marks the page itself; a prefix match only highlights the section. */ -}}
+            {{ $exact := eq $current $url }}
+            {{ $inSection := cond (eq .URL "/") $exact (hasPrefix $current $url) }}
+            {{ $attrs := printf "%s%s" (cond $exact " aria-current=\"page\"" "") (cond $inSection " class=\"is-active\"" "") | safeHTMLAttr }}
+            {{ if .HasChildren }}
+              {{ $subId := printf "submenu-%s" (.Identifier | default (urlize .Name)) }}
+              <li class="site-nav__item site-nav__item--parent">
+                {{- /* The highlight sits on the row, so it covers the caret as well as the link. */ -}}
+                <span class="site-nav__row{{ if $inSection }} is-active{{ end }}">
+                  <a href="{{ $url }}"{{ if $exact }} aria-current="page"{{ end }}>{{ .Name }}</a>
+                  <button type="button" class="site-nav__caret" aria-expanded="false" aria-controls="{{ $subId }}">
+                    <span class="d4k-sr">Submenu {{ .Name }}</span>
+                    <svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true" focusable="false">
+                      <path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </button>
+                </span>
+                <ul class="site-nav__sub" id="{{ $subId }}">
+                  {{ range .Children }}
+                    {{ $childUrl := .URL | relURL }}
+                    <li><a href="{{ $childUrl }}"{{ if eq $current $childUrl }} aria-current="page" class="is-active"{{ end }}>{{ .Name }}</a></li>
+                  {{ end }}
+                </ul>
+              </li>
+            {{ else }}
+              <li class="site-nav__item"><a href="{{ $url }}" {{ $attrs }}>{{ .Name }}</a></li>
+            {{ end }}
           {{ end }}
         </ul>
       </nav>
 
-      <button type="button" class="d4k-btn d4k-btn--secondary d4k-btn--sm theme-toggle" aria-pressed="false">Donkere modus</button>
+      {{ if site.Params.themeToggle }}
+        <button type="button" class="d4k-btn d4k-btn--secondary d4k-btn--sm theme-toggle" aria-pressed="false">Donkere modus</button>
+      {{ end }}
     </div>
   </div>
 </header>
 <script>
   (function () {
+    /* Runs only when the theme toggle is rendered (params.themeToggle in hugo.toml). */
     var root = document.documentElement;
     var btn = document.querySelector('.theme-toggle');
-    function sync() { btn.setAttribute('aria-pressed', String(root.dataset.theme === 'dark')); }
-    sync();
-    btn.addEventListener('click', function () {
-      var theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-      root.dataset.theme = theme;
-      try { localStorage.setItem('d4k-theme', theme); } catch (e) {}
+    if (btn) {
+      var sync = function () { btn.setAttribute('aria-pressed', String(root.dataset.theme === 'dark')); };
       sync();
+      btn.addEventListener('click', function () {
+        var theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = theme;
+        try { localStorage.setItem('d4k-theme', theme); } catch (e) {}
+        sync();
+      });
+    }
+
+    /* Hamburger: folds the menu panel open and shut below the nav breakpoint. */
+    var toggle = document.querySelector('.site-nav-toggle');
+    var panel = document.getElementById('site-menu');
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.classList.toggle('is-open', open);
+      if (!open) closeSubmenus();
+    });
+
+    /* Submenus: a dropdown on wide screens, always unfolded inside the mobile panel. */
+    var parents = Array.prototype.slice.call(document.querySelectorAll('.site-nav__item--parent'));
+    function closeSubmenus(except) {
+      parents.forEach(function (li) {
+        if (li === except) return;
+        li.classList.remove('is-open');
+        li.querySelector('.site-nav__caret').setAttribute('aria-expanded', 'false');
+      });
+    }
+    parents.forEach(function (li) {
+      var caret = li.querySelector('.site-nav__caret');
+      caret.addEventListener('click', function () {
+        var open = caret.getAttribute('aria-expanded') !== 'true';
+        closeSubmenus(li);
+        caret.setAttribute('aria-expanded', String(open));
+        li.classList.toggle('is-open', open);
+      });
+      li.addEventListener('focusout', function (e) {
+        if (!li.contains(e.relatedTarget)) {
+          li.classList.remove('is-open');
+          caret.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.site-nav__item--parent')) closeSubmenus();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      closeSubmenus();
+      if (toggle.getAttribute('aria-expanded') === 'true') {
+        toggle.setAttribute('aria-expanded', 'false');
+        panel.classList.remove('is-open');
+        toggle.focus();
+      }
     });
   })();
 </script>

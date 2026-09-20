@@ -1,0 +1,41 @@
+{{ define "main" }}
+<h1 class="page-title">{{ .Title }}</h1>
+{{ with .Params.summary }}<p class="intro">{{ . }}</p>{{ end }}
+{{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+<div class="video-list page-section">
+  {{ range hugo.Data.videos }}
+    <article class="d4k-video">
+      <div class="d4k-video__frame">
+        {{- /* youtube-nocookie zet pas een cookie als de bezoeker op play drukt. */ -}}
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/{{ .youtube }}"
+          title="{{ .title }}"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="d4k-video__body">
+        <p class="d4k-video__meta">
+          {{ with .kind }}<span class="d4k-badge d4k-badge--neutral">{{ . }}</span>{{ end }}
+          <span>{{ time.Format "2 January 2006" .date }}{{ with .city }} · {{ . }}{{ end }}</span>
+        </p>
+        <h2 class="d4k-video__title">{{ .title }}</h2>
+        {{ with .text }}<p>{{ . }}</p>{{ end }}
+        {{ with .host }}<p class="d4k-video__host">Bij {{ . }}</p>{{ end }}
+      </div>
+    </article>
+  {{ end }}
+</div>
+
+<section class="page-section">
+  <div class="cta-band">
+    <div>
+      <h2 class="section-title">Ook een keer meedoen?</h2>
+      <p class="intro">Kijk welke events eraan komen en meld je aan.</p>
+    </div>
+    <a class="d4k-btn d4k-btn--primary d4k-btn--lg" href="{{ "/events/" | relURL }}">Bekijk de events</a>
+  </div>
+</section>
+{{ end }}

@@ -106,9 +106,45 @@ These are the formal pages: a plain header (no orange band), flat cards and a fa
 - Partners are listed in [data/partners.yml](data/partners.yml), grouped (Donateur, Communities, Bedrijven).
   Per partner: `name`, optional `logo` (in `static/images/partners/`), `page` (internal link) or `url` (website) and `note`.
   The page itself is [content/pages/partners.md](content/pages/partners.md) (`layout: partners`).
+  Logos are drawn in a fixed-height box on a white plate and scaled to fit (`object-fit: contain`), so a square badge
+  and a wide wordmark end up the same size and a small raster is never blown up past its own resolution — any shape
+  works, no need to trim or pad the file first. A partner without a `logo` shows its name as a wordmark instead.
 - The ANBI page ([content/pages/anbi.md](content/pages/anbi.md), `layout: anbi`) is built from [data/anbi.yml](data/anbi.yml)
   (goal, activities, finance per year, policy plan, …) plus the shared details in `data/stichting.yml`.
   Add a new year at the top of `finance`; a document that is not published is left out and shows as a dash.
 - The Over ons page ([content/pages/overons.md](content/pages/overons.md), `layout: overons`) shows what we do, the map of
   event locations from [data/d4k_events.yml](data/d4k_events.yml) and the text of the page.
 
+
+## videos
+
+The Videos page lives at `/events/videos/` and sits in the menu as a submenu of Events.
+
+- The list of videos is in [data/videos.yml](data/videos.yml), newest first — the order in that file is the order on the
+  page. Per video: `youtube` (the id from the YouTube URL, the part after `/embed/` or `?v=`), `title`, optional `kind`
+  (a badge such as "Reportage" or "Aankondiging"), `date` (`YYYY-MM-DD`), `city`, `host` and `text`.
+- The page itself is [content/videos.md](content/videos.md) (`layout: videos`, with `url: /events/videos/` so it nests
+  under Events); the template is [layouts/_default/videos.html](layouts/_default/videos.html).
+- Videos are embedded through `youtube-nocookie.com`, so YouTube only sets a cookie once a visitor presses play.
+
+## menu and submenus
+
+The navigation is defined in [hugo.toml](hugo.toml) under `[[menu.main]]`. To hang a page under an existing item, give
+the parent an `identifier` and point the child at it with `parent`:
+
+```toml
+[[menu.main]]
+  identifier = "events"
+  name = "Events"
+  url = "/events/"
+  weight = 2
+[[menu.main]]
+  identifier = "videos"
+  parent = "events"
+  name = "Video's"
+  url = "/events/videos/"
+  weight = 1
+```
+
+Below 960px the whole menu folds behind a hamburger button and submenus are shown unfolded inside the panel; above it
+the submenu is a dropdown that opens on hover or with the caret button next to the parent link.

@@ -9,6 +9,9 @@ canonifyURLs = true
   name = 'Stichting Devoxx4kids Nederland'
   logo = "images/d4k-nl-horizontal.png"
   logoAlt = "Devoxx4Kids Netherlands"
+  # The dark theme is fully built (tokens in main.css, toggle in header.html, restore
+  # script in meta.html) but switched off in the interface. Set to true to bring it back.
+  themeToggle = false
   
 
 [menu]
@@ -17,9 +20,17 @@ canonifyURLs = true
    url = "/"
    weight = 1
  [[menu.main]]
+   identifier = "events"
    name = "Events"
    url = "/events/"
    weight = 2
+ # Submenu of Events; `parent` matches the identifier above.
+ [[menu.main]]
+   identifier = "videos"
+   parent = "events"
+   name = "Video's"
+   url = "/events/videos/"
+   weight = 1
  [[menu.main]]
    name = "Gastlessen"
    url = "/posts/gastlessen/"

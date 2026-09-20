@@ -8,7 +8,7 @@ Static website for Stichting Devoxx4Kids Nederland, built with Hugo (extended). 
 
 ## Design system
 
-The look follows the Devoxx4Kids Netherlands design system (https://claude.ai/artifact/2S599ykmqUXadysx2wek3D). `main.css` starts with its tokens as CSS custom properties (light theme on `:root` is always the default; the dark theme is `:root[data-theme="dark"]`, set by the header toggle in `layouts/partials/header.html` and remembered in `localStorage` under `d4k-theme`, restored before first paint by a script in `meta.html`) and reuses its component classes with the `d4k-` prefix: `d4k-hero`, `d4k-btn`, `d4k-badge`, `d4k-card`, `d4k-alert`, `d4k-event`. Key rules from the system:
+The look follows the Devoxx4Kids Netherlands design system (https://claude.ai/artifact/2S599ykmqUXadysx2wek3D). `main.css` starts with its tokens as CSS custom properties (light theme on `:root` is always the default; the dark theme is `:root[data-theme="dark"]`, set by the header toggle in `layouts/partials/header.html` and remembered in `localStorage` under `d4k-theme`, restored before first paint by a script in `meta.html`. The whole toggle is currently **off**: `params.themeToggle = false` in `hugo.toml` hides the button and skips the restore script, so the site is always light. The tokens and all the code stay in place — flip the param to `true` to bring it back) and reuses its component classes with the `d4k-` prefix: `d4k-hero`, `d4k-btn`, `d4k-badge`, `d4k-card`, `d4k-alert`, `d4k-event`. Key rules from the system:
 - `brand` orange is a fill only, never text; links and legible orange use `brand-deep`; text on orange is `on-brand`.
 - Controls and blocks get a 2px `border-strong` outline and a hard `shadow-pop` offset (no blurred shadows); spacing only in `space-*` steps.
 - Fonts: Outfit (display/headings), Nunito (body), JetBrains Mono (code), loaded from Google Fonts.
@@ -31,7 +31,8 @@ There are no tests or linters.
 
 ## Architecture
 
-- **Navigation** is defined in `hugo.toml` under `[[menu.main]]`, not in front matter. Add new top-level pages there.
+- **Navigation** is defined in `hugo.toml` under `[[menu.main]]`, not in front matter. Add new top-level pages there. A submenu is a `[[menu.main]]` entry whose `parent` matches the parent's `identifier` (Video's under Events). `layouts/partials/header.html` renders one level of children: below 960px the menu folds behind a hamburger (`.site-nav-toggle`, panel `#site-menu`) with submenus shown unfolded; above it the submenu is a dropdown (`.site-nav__sub`) opened on hover or with the caret button. An exact URL match gets `aria-current="page"`, a section prefix match only the `is-active` class.
+- **Video's** (`/events/videos/`) is `content/videos.md` (`layout: videos`, `url` set so it nests under Events) rendering `data/videos.yml` — a hand-kept list, newest first, of `youtube` (video id), `title`, `kind`, `date`, `city`, `host`, `text`. Embeds go through `youtube-nocookie.com`. It is independent of `content/events/`.
 - **Events** (`content/events/`, files named `YYYYMMDD-City-Company.md`, images in `static/images/events/`; README.md documents every front matter field) use two dates in front matter:
   - `date` — publish date (Hugo skips pages with a future `date` unless built with `-F`)
   - `eventDate` — when the event takes place; used for upcoming/past splitting and sorting

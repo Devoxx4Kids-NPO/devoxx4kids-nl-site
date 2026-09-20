@@ -1,5 +1,7 @@
 # Partners of the foundation, shown on the Partners page, grouped.
 # Per partner: name, optional logo (in static/images/partners/), optional page (internal link) or url (website), optional note.
+# Logos are shown in a fixed-height box on a white plate, so any aspect ratio works; a partner
+# without a logo falls back to its name as a wordmark.
 - group: Donateur
   partners:
     - name: Aramco Europe
@@ -9,10 +11,20 @@
 - group: Communities
   partners:
     - name: NLJUG
+      logo: /images/partners/nljug.jpg
+      url: https://nljug.org/
     - name: JDuchess
+      logo: /images/partners/jduchess.png
+      url: https://jduchess.org/
 - group: Bedrijven
   partners:
     - name: Open Web
     - name: OpenValue
+      logo: /images/partners/openvalue.png
+      url: https://openvalue.eu/
     - name: Kadaster
+      logo: /images/partners/kadaster.png
+      url: https://www.kadaster.nl/
     - name: Craftsmen
+      logo: /images/partners/craftsmen.svg
+      url: https://craftsmen.nl/
