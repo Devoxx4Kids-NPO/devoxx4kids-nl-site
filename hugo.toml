@@ -1,4 +1,6 @@
 baseURL = 'https://Devoxx4Kids-NPO.github.io/nl/'
+locale = 'nl-NL'
+title = 'Devoxx4Kids Nederland'
 
 relativeURLs = false
 canonifyURLs = true
