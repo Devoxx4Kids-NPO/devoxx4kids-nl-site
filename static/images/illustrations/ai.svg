@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Chatgesprek met AI">
+  <!-- Cartoon chat between a child and an AI assistant, for the AI workshop. -->
+  <ellipse cx="120" cy="166" rx="92" ry="9" fill="#040707" opacity="0.15"/>
+  <!-- question bubble -->
+  <path d="M28 30 Q28 18 40 18 H132 Q144 18 144 30 V58 Q144 70 132 70 H64 L46 84 L50 70 H40 Q28 70 28 58 Z" fill="#ffffff" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#5a5a5a"><rect x="42" y="32" width="86" height="7" rx="3.5"/><rect x="42" y="48" width="56" height="7" rx="3.5"/></g>
+  <!-- answer bubble -->
+  <path d="M96 84 Q96 72 108 72 H200 Q212 72 212 84 V124 Q212 136 200 136 H190 L194 152 L174 136 H108 Q96 136 96 124 Z" fill="#f2a426" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#040707"><rect x="110" y="88" width="84" height="7" rx="3.5"/><rect x="110" y="103" width="68" height="7" rx="3.5"/><rect x="110" y="118" width="46" height="7" rx="3.5"/></g>
+  <!-- sparkle -->
+  <path d="M60 104 L66 120 L82 126 L66 132 L60 148 L54 132 L38 126 L54 120 Z" fill="#e2a02e" stroke="#040707" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M30 94 L33 101 L40 104 L33 107 L30 114 L27 107 L20 104 L27 101 Z" fill="#dedfe0" stroke="#040707" stroke-width="3" stroke-linejoin="round"/>
+</svg>

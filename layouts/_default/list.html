@@ -1,4 +1,6 @@
 {{ define "main" }}
-  <h1>{{ .Params.Title }}</h1>
-  {{ .Content }}
+  <h1 class="page-title">{{ .Title }}</h1>
+  <div class="prose">
+    {{ .Content }}
+  </div>
 {{ end }}

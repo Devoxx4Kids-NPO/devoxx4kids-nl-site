@@ -1,0 +1,8 @@
+{{- /* Leaflet map with the locations from data/d4k_events.yml. */ -}}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" crossorigin=""></script>
+<div id="map" role="region" aria-label="Kaart met locaties van Devoxx4Kids events"></div>
+<script>
+ let markers = {{ hugo.Data.d4k_events }};
+</script>
+<script src="{{ "map.js" | relURL }}"></script>

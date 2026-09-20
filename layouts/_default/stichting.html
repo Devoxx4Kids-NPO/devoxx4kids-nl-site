@@ -1,0 +1,78 @@
+{{ define "main" }}
+{{ $s := hugo.Data.stichting }}
+{{ partial "page-header.html" (dict "eyebrow" "Over de stichting" "title" .Title "lead" .Params.summary) }}
+
+<div class="formal-layout">
+  <div class="prose formal-layout__main">
+    {{ .Content }}
+  </div>
+
+  <aside class="facts-panel" aria-label="Gegevens van de stichting">
+    <dl>
+      <div class="facts-panel__item">
+        <dt>Adres</dt>
+        <dd>{{ $s.name }}<br>{{ $s.address }}<br>{{ $s.postcode }} {{ $s.city }}</dd>
+      </div>
+      <div class="facts-panel__item">
+        <dt>Contact</dt>
+        <dd><a href="mailto:{{ $s.email }}">{{ $s.email }}</a><br><a href="tel:{{ replaceRE `[^+0-9]` "" (replace $s.phone "(0)" "") }}">{{ $s.phone }}</a></dd>
+      </div>
+      <div class="facts-panel__item">
+        <dt>Registratie</dt>
+        <dd>KvK {{ $s.kvk }}<br>RSIN {{ $s.rsin }}</dd>
+      </div>
+      <div class="facts-panel__item">
+        <dt>ANBI</dt>
+        <dd>De stichting heeft de ANBI-status. <a href="{{ "/pages/anbi/" | relURL }}">Bekijk de ANBI-gegevens</a></dd>
+      </div>
+    </dl>
+  </aside>
+</div>
+
+<section class="page-section" aria-labelledby="h-bestuur">
+  <h2 class="section-title" id="h-bestuur">Bestuur</h2>
+  <p class="intro">De bestuursleden ontvangen geen beloning voor hun werk voor de stichting.</p>
+  <ul class="person-grid">
+    {{ range $s.board }}
+      <li class="d4k-card person">
+        <span class="d4k-badge d4k-badge--steel">{{ .role }}</span>
+        <p class="person__name">{{ .name }}</p>
+        <a href="mailto:{{ .email }}">{{ .email }}</a>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+
+<section class="page-section formal-pair">
+  <div class="d4k-card donate" aria-labelledby="h-doneren">
+    <h2 class="d4k-card__title" id="h-doneren">Doneren</h2>
+    <p class="d4k-card__body">Wilt u donateur worden of een gift overmaken aan {{ $s.name }}? Wat fijn, dank u wel! U kunt uw gift overmaken op ons rekeningnummer, of contact met ons opnemen via <a href="mailto:{{ $s.email }}">{{ $s.email }}</a>.</p>
+    <p class="iban">
+      <span class="iban__label">IBAN</span>
+      <span class="iban__number" id="iban">{{ $s.iban }}</span>
+      <button type="button" class="d4k-btn d4k-btn--secondary d4k-btn--sm" data-copy="{{ replace $s.iban " " "" }}">Kopieer</button>
+    </p>
+    <p class="iban__note">t.n.v. {{ $s.name }}, {{ $s.city }}</p>
+  </div>
+
+  <div class="d4k-card" aria-labelledby="h-verantwoording">
+    <h2 class="d4k-card__title" id="h-verantwoording">Verantwoording</h2>
+    <p class="d4k-card__body">Als ANBI publiceren wij ieder jaar onze financiële verantwoording.</p>
+    <ul class="doc-list">
+      {{ range $s.documents }}
+        <li><a href="{{ .url | relURL }}">{{ .title }}</a> <span class="doc-list__type">PDF</span></li>
+      {{ end }}
+      <li><a href="{{ "/pages/anbi/" | relURL }}">Alle ANBI-gegevens en jaarverslagen</a></li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var done = function () { btn.textContent = 'Gekopieerd'; setTimeout(function () { btn.textContent = 'Kopieer'; }, 2000); };
+      if (navigator.clipboard) navigator.clipboard.writeText(btn.dataset.copy).then(done, function () {});
+    });
+  });
+</script>
+{{ end }}

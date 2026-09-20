@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Een gastdocent legt iets uit aan twee kinderen met een laptop en een mBot2">
+  <!-- Cartoon guest lesson: a volunteer in an orange shirt at the whiteboard, two children at a desk with a laptop and an mBot2. -->
+  <ellipse cx="250" cy="286" rx="220" ry="10" fill="#040707" opacity="0.15"/>
+
+  <!-- whiteboard with a bit of code -->
+  <g stroke="#040707" stroke-width="4" stroke-linejoin="round">
+    <rect x="24" y="22" width="176" height="112" rx="10" fill="#ffffff"/>
+    <path d="M60 134 V150 M164 134 V150" fill="none"/>
+  </g>
+  <g fill="#f2a426"><rect x="40" y="40" width="54" height="10" rx="5"/></g>
+  <g fill="#5a5a5a"><rect x="52" y="60" width="80" height="8" rx="4"/><rect x="52" y="76" width="60" height="8" rx="4"/><rect x="40" y="92" width="36" height="8" rx="4"/></g>
+  <g fill="none" stroke="#e2a02e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M150 52 L140 62 L150 72"/><path d="M170 52 L180 62 L170 72"/></g>
+
+  <!-- teacher -->
+  <g stroke="#040707" stroke-width="4" stroke-linejoin="round">
+    <rect x="92" y="226" width="16" height="54" rx="6" fill="#3a3f44"/>
+    <rect x="114" y="226" width="16" height="54" rx="6" fill="#3a3f44"/>
+    <ellipse cx="98" cy="282" rx="14" ry="6" fill="#040707"/>
+    <ellipse cx="126" cy="282" rx="14" ry="6" fill="#040707"/>
+  </g>
+  <!-- arm down (behind body) -->
+  <path d="M90 170 Q78 200 86 224" fill="none" stroke="#040707" stroke-width="16" stroke-linecap="round"/>
+  <path d="M90 170 Q78 200 86 224" fill="none" stroke="#f1c7a0" stroke-width="8" stroke-linecap="round"/>
+  <path d="M84 150 Q84 140 96 140 H126 Q138 140 138 150 L142 232 H80 Z" fill="#f2a426" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <!-- "4" on the volunteer shirt -->
+  <path d="M112 168 L102 188 H120 M114 178 V198" fill="none" stroke="#040707" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- arm raised, pointing at the children -->
+  <path d="M134 158 Q160 150 186 130" fill="none" stroke="#040707" stroke-width="16" stroke-linecap="round"/>
+  <path d="M134 158 Q160 150 186 130" fill="none" stroke="#f2a426" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="190" cy="127" r="9" fill="#f1c7a0" stroke="#040707" stroke-width="4"/>
+  <!-- head -->
+  <rect x="104" y="128" width="14" height="16" fill="#f1c7a0" stroke="#040707" stroke-width="4"/>
+  <circle cx="111" cy="110" r="24" fill="#f1c7a0" stroke="#040707" stroke-width="4"/>
+  <path d="M87 108 Q86 82 112 84 Q136 84 135 106 Q124 96 108 98 Q96 100 87 108 Z" fill="#6b4a2f" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="104" cy="112" r="3" fill="#040707"/><circle cx="120" cy="112" r="3" fill="#040707"/>
+  <path d="M104 121 Q112 128 120 121" fill="none" stroke="#040707" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- child 1 (behind the desk) -->
+  <path d="M258 214 V190 Q258 176 272 176 H310 Q324 176 324 190 V214 Z" fill="#5a5a5a" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="291" cy="152" r="21" fill="#c68b5e" stroke="#040707" stroke-width="4"/>
+  <path d="M270 150 Q268 128 291 128 Q314 128 312 150 Q304 138 291 140 Q278 140 270 150 Z" fill="#2b1d14" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="284" cy="155" r="3" fill="#040707"/><circle cx="298" cy="155" r="3" fill="#040707"/>
+  <path d="M285 163 Q291 168 297 163" fill="none" stroke="#040707" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- child 2 (behind the desk), hand up -->
+  <path d="M424 164 Q432 130 438 96" fill="none" stroke="#040707" stroke-width="15" stroke-linecap="round"/>
+  <path d="M424 164 Q432 130 438 96" fill="none" stroke="#f78c40" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="439" cy="90" r="9" fill="#8d5a3b" stroke="#040707" stroke-width="4"/>
+  <path d="M368 214 V172 Q368 158 382 158 H418 Q432 158 432 172 V214 Z" fill="#f78c40" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <g transform="translate(0 -22)">
+    <circle cx="400" cy="154" r="21" fill="#8d5a3b" stroke="#040707" stroke-width="4"/>
+    <g fill="#1a1411" stroke="#040707" stroke-width="3"><circle cx="380" cy="140" r="9"/><circle cx="420" cy="140" r="9"/></g>
+    <path d="M380 146 Q380 128 400 128 Q420 128 420 146 Q410 138 400 139 Q390 138 380 146 Z" fill="#1a1411" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="393" cy="157" r="3" fill="#040707"/><circle cx="407" cy="157" r="3" fill="#040707"/>
+    <path d="M393 165 Q400 171 407 165" fill="none" stroke="#040707" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- desk -->
+  <g stroke="#040707" stroke-width="4" stroke-linejoin="round">
+    <rect x="236" y="244" width="12" height="38" fill="#8b8d90"/>
+    <rect x="444" y="244" width="12" height="38" fill="#8b8d90"/>
+    <rect x="224" y="212" width="244" height="34" rx="6" fill="#dedfe0"/>
+  </g>
+  <path d="M234 222 H300" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- laptop: we see the back of the lid -->
+  <g stroke="#040707" stroke-width="4" stroke-linejoin="round">
+    <path d="M262 212 L268 172 H320 L326 212 Z" fill="#a5a7aa"/>
+    <rect x="252" y="208" width="84" height="8" rx="3" fill="#8b8d90"/>
+  </g>
+  <circle cx="294" cy="192" r="6" fill="#f2a426" stroke="#040707" stroke-width="3"/>
+
+  <!-- mBot2 on the desk -->
+  <g transform="translate(356 155) scale(0.36)">
+    <g fill="none" stroke="#e2a02e" stroke-width="10" stroke-linecap="round"><path d="M100 30 Q120 16 140 30"/></g>
+    <rect x="14" y="88" width="36" height="72" rx="14" fill="#2b2f33" stroke="#040707" stroke-width="10"/>
+    <rect x="190" y="88" width="36" height="72" rx="14" fill="#2b2f33" stroke="#040707" stroke-width="10"/>
+    <rect x="72" y="40" width="96" height="42" rx="10" fill="#040707"/>
+    <rect x="84" y="48" width="72" height="26" rx="5" fill="#f2a426"/>
+    <rect x="44" y="78" width="152" height="80" rx="18" fill="#dedfe0" stroke="#040707" stroke-width="10"/>
+    <rect x="64" y="96" width="112" height="44" rx="22" fill="#5a5a5a" stroke="#040707" stroke-width="9"/>
+    <circle cx="92" cy="118" r="16" fill="#e2a02e" stroke="#040707" stroke-width="9"/>
+    <circle cx="148" cy="118" r="16" fill="#e2a02e" stroke="#040707" stroke-width="9"/>
+    <circle cx="94" cy="120" r="6" fill="#040707"/><circle cx="150" cy="120" r="6" fill="#040707"/>
+  </g>
+</svg>

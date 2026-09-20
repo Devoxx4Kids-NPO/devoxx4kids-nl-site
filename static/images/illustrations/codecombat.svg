@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Schild met code, voor een programmeerspel">
+  <!-- Cartoon shield and sword with a code sign, for the CodeCombat module (learning to code by playing a game). -->
+  <ellipse cx="130" cy="166" rx="96" ry="9" fill="#040707" opacity="0.15"/>
+  <!-- sword beside the shield, tilted -->
+  <g transform="rotate(28 196 92)" stroke="#040707" stroke-width="4" stroke-linejoin="round">
+    <path d="M188 26 L196 14 L204 26 V118 H188 Z" fill="#dedfe0"/>
+    <path d="M196 26 V112" stroke="#a5a7aa" stroke-width="3" fill="none"/>
+    <rect x="172" y="118" width="48" height="12" rx="6" fill="#e2a02e"/>
+    <rect x="189" y="130" width="14" height="24" rx="4" fill="#5a5a5a"/>
+    <circle cx="196" cy="160" r="7" fill="#e2a02e"/>
+  </g>
+  <g transform="translate(-18 0)">
+  <!-- shield -->
+  <path d="M120 34 Q148 46 176 42 Q180 104 120 154 Q60 104 64 42 Q92 46 120 34 Z" fill="#f2a426" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M120 50 Q140 58 162 56 Q162 100 120 138 Z" fill="#f78c40"/>
+  <path d="M120 34 Q148 46 176 42 Q180 104 120 154 Q60 104 64 42 Q92 46 120 34 Z" fill="none" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <!-- </> -->
+  <g fill="none" stroke="#040707" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 76 L86 90 L100 104"/>
+    <path d="M140 76 L154 90 L140 104"/>
+    <path d="M128 70 L112 110"/>
+  </g>
+  </g>
+</svg>

@@ -1,19 +1,7 @@
 ---
-title: Gastlessen 
+title: Gastlessen
+summary: "Vrijwilligers uit de IT komen naar jullie school en geven een les programmeren. De kinderen gaan zelf aan de slag, met robots, micro:bits of Scratch."
+contact: info@devoxx4kids.nl
+# modules we give as a guest lesson, from content/modules/
+modules: [mbot2, microbit, scratch, cyberrijbewijs, ai, intro-it]
 ---
-
-Als Stichting krijgen wij meerdere aanvragen van scholen om een gastles te komen verzorgen.
-Wij willen deze scholen graag helpen om een gast docent te vinden in hun omgeving die aansluit op hun wensen.
-Onze gast docenten geven vrijwillig en zonder vergoedingen les aan kinderen.
-Zou jouw school hier interesse in hebben, neem dan contact met ons op via: info@devoxx4kids.nl
-
-**Voorbeeld activiteiten**
-
-- Een spelletje programmeren met Scratch
-- Cyberrijbewijs
-- Microbit met Pong
-- Lessen zoals: 
-  - Hoe werkt een computer 
-  - Hoe ga je met Social Media om 
-  - Hoe zorg je dat jouw accounts niet gehacked worden.
-- En nog vele andere mogelijkheden.

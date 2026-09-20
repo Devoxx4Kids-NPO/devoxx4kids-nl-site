@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Bouwblok">
+  <!-- Cartoon building block for the Minecraft workshop: an isometric pixel cube in the brand palette. -->
+  <ellipse cx="120" cy="166" rx="84" ry="9" fill="#040707" opacity="0.15"/>
+  <path d="M120 18 L196 58 L120 98 L44 58 Z" fill="#f2a426"/>
+  <path d="M44 58 L120 98 V162 L44 122 Z" fill="#a5a7aa"/>
+  <path d="M196 58 L120 98 V162 L196 122 Z" fill="#8b8d90"/>
+  <!-- pixel texture -->
+  <g fill="#e2a02e">
+    <path d="M101 38 L120 48 L101 58 L82 48 Z"/><path d="M139 38 L158 48 L139 58 L120 48 Z"/><path d="M120 68 L139 78 L120 88 L101 78 Z"/><path d="M158 58 L177 68 L166 74 L147 64 Z"/>
+  </g>
+  <g fill="#f78c40"><path d="M82 58 L101 68 L90 74 L71 64 Z"/><path d="M120 28 L135 36 L124 42 L109 34 Z"/></g>
+  <g fill="#dedfe0"><path d="M58 80 L76 90 V106 L58 96 Z"/><path d="M92 110 L108 118 V134 L92 126 Z"/><path d="M64 108 L78 115 V128 L64 121 Z"/></g>
+  <g fill="#5a5a5a"><path d="M140 110 L158 100 V116 L140 126 Z"/><path d="M170 86 L186 78 V94 L170 102 Z"/><path d="M156 128 L172 120 V134 L156 142 Z"/></g>
+  <path d="M120 18 L196 58 V122 L120 162 L44 122 V58 Z M44 58 L120 98 L196 58 M120 98 V162" fill="none" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+</svg>

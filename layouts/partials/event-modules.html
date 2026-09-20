@@ -1,0 +1,10 @@
+{{- /* Resolves an event's `modules` front matter (module file names) to module pages, in the order given. */ -}}
+{{ $pages := slice }}
+{{ range .Params.modules }}
+  {{ with site.GetPage (printf "/modules/%s" .) }}
+    {{ $pages = $pages | append . }}
+  {{ else }}
+    {{ warnf "%s: unknown module %q in front matter" $.File.Path . }}
+  {{ end }}
+{{ end }}
+{{ return $pages }}

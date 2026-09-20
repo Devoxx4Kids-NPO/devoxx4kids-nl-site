@@ -1,43 +1,38 @@
-
-      <article class="event-card">
-        <div class="event-card-image">
-          {{ if .Params.thumbnail }}
-            <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" />
-          {{ else if .Params.image }}
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" />
-          {{ end }}
-        </div>
-
-        <div class="event-card-content">
-          <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-          <p class="event-date">{{ .Date.Format "2 Jan, 2006" }}</p>
-
-          <p class="event-summary">
-            {{ .Summary }}
-            <a href="{{ .Permalink }}" class="read-more"> →</a>
-          </p>
-        </div>
-      </article>
-
-<!--
-<article class="event-card">
-    <div class="event-card-image">
-        {{ if .Params.thumbnail }}
-        {{ .Params.thumbnail }}
-        {{ else if .Params.image }}
-        {{ .Params.image }}
+{{- /* EventCard from the design system: one dated edition.
+       Front matter used: eventDate, city, host, ages, registration, status (open | vol | binnenkort). */ -}}
+{{ $date := time .Params.eventDate }}
+{{ $past := lt $date now }}
+{{ $title := .Title }}
+{{ with .Params.city }}{{ $title = printf "Devoxx4Kids %s" . }}{{ end }}
+{{ $meta := slice }}
+{{ with .Params.host }}{{ $meta = $meta | append . }}{{ end }}
+{{ with .Params.city }}{{ $meta = $meta | append . }}{{ end }}
+{{ with .Params.ages }}{{ $meta = $meta | append . }}{{ end }}
+<article class="d4k-event{{ if $past }} d4k-event--past{{ end }}">
+  <div class="d4k-event__date">
+    <span class="d4k-event__day">{{ time.Format "2" $date }}</span>
+    <span class="d4k-event__month">{{ time.Format "Jan" $date }}</span>
+    <span class="d4k-event__year">{{ time.Format "2006" $date }}</span>
+  </div>
+  <div class="d4k-event__main">
+    <h3 class="d4k-event__title"><a href="{{ .RelPermalink }}">{{ $title }}</a></h3>
+    <p class="d4k-event__meta">{{ delimit $meta " · " }}</p>
+  </div>
+  <div class="d4k-event__side">
+    {{ if $past }}
+      <span class="d4k-badge d4k-badge--steel">Afgelopen</span>
+    {{ else }}
+      {{ with .Params.status }}
+        {{ if eq . "open" }}<span class="d4k-badge d4k-badge--success">Plek vrij</span>
+        {{ else if eq . "vol" }}<span class="d4k-badge d4k-badge--danger">Vol</span>
+        {{ else if eq . "binnenkort" }}<span class="d4k-badge d4k-badge--steel">Binnenkort</span>
         {{ end }}
-    </div>
-
-    <div class="event-card-content">
-        <h2>alink }}">{{ .Title }}</a></h2>
-        <p class="event-date">{{ .Date.Format "2 Jan, 2006" }}</p>
-
-        <p class="event-summary">
-            {{ .Summary }}
-            {{ .Permalink }}→</a>
-        </p>
-    </div>
+      {{ end }}
+    {{ end }}
+    {{ if and (not $past) .Params.registration (ne .Params.status "vol") }}
+      <a class="d4k-btn d4k-btn--primary d4k-btn--sm" href="{{ .Params.registration }}" target="_blank" rel="noopener noreferrer">Aanmelden</a>
+    {{ else }}
+      <a class="d4k-btn d4k-btn--secondary d4k-btn--sm" href="{{ .RelPermalink }}">Bekijk<span class="d4k-sr"> {{ $title }}</span></a>
+    {{ end }}
+  </div>
 </article>
-
--->

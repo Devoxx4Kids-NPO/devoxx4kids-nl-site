@@ -1,4 +1,19 @@
 <meta charset="utf-8">
-<title>{{ print .Page.Title }}</title>
-{{ $style := resources.Get "css/main.css" }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+{{- /* Only compute .Summary when there is no summary in front matter; `default` would evaluate both. */ -}}
+{{ $description := .Params.summary }}
+{{ if not $description }}{{ $description = .Summary }}{{ end }}
+{{ with $description }}<meta name="description" content="{{ . | plainify | truncate 160 }}">{{ end }}
+<meta name="theme-color" content="#f2a426">
+<script>
+  /* Restore the saved theme before first paint; light unless the visitor chose dark. */
+  try {
+    if (localStorage.getItem('d4k-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+  } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap">
+{{ $style := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">

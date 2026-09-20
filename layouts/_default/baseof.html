@@ -1,16 +1,15 @@
 <!doctype html>
-<html>
+<html lang="{{ .Params.lang | default "nl" }}" data-theme="light">
 <head>
  {{ partial "meta.html" . }}
- {{ partial "header.html" . }}
 </head>
 
 <body>
- <main class="main-content">
-   <div class="content-wrapper">
-     {{ block "main" . }}
-     {{ end }}
-   </div>
+ <a class="skip-link d4k-btn d4k-btn--secondary d4k-btn--sm" href="#inhoud">Naar de inhoud</a>
+ {{ partial "header.html" . }}
+ <main id="inhoud" class="page">
+   {{ block "main" . }}
+   {{ end }}
  </main>
  {{ partial "footer.html" . }}
 </body>
