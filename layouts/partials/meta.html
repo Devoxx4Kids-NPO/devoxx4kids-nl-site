@@ -6,12 +6,16 @@
 {{ if not $description }}{{ $description = .Summary }}{{ end }}
 {{ with $description }}<meta name="description" content="{{ . | plainify | truncate 160 }}">{{ end }}
 <meta name="theme-color" content="#f2a426">
+{{ if site.Params.themeToggle }}
 <script>
-  /* Restore the saved theme before first paint; light unless the visitor chose dark. */
+  /* Restore the saved theme before first paint; light unless the visitor chose dark.
+     Skipped while the toggle is off, so a theme saved earlier cannot strand a visitor
+     in a dark site with no control to switch back. */
   try {
     if (localStorage.getItem('d4k-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
   } catch (e) {}
 </script>
+{{ end }}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap">

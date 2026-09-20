@@ -1,0 +1,52 @@
+# Video's op /events/videos/, gerenderd door layouts/_default/videos.html.
+# Deze lijst wordt met de hand bijgehouden en staat los van content/events/.
+# Volgorde in dit bestand is de volgorde op de pagina: nieuwste bovenaan.
+#
+# Velden:
+#   youtube — het id uit de YouTube-URL (het stuk na /embed/ of ?v=)
+#   title   — titel boven de video
+#   kind    — optioneel label, bijvoorbeeld "Reportage" of "Aankondiging"
+#   date    — datum van het event (YYYY-MM-DD)
+#   city    — plaats van het event
+#   host    — bij wie we te gast waren
+#   text    — korte toelichting
+
+- youtube: Dj7nrljXBMI
+  title: Samen1 filmt de dag bij het Kadaster
+  kind: Reportage
+  date: 2024-10-05
+  city: Apeldoorn
+  host: Kadaster en Craftsmen
+  text: >-
+    Omroep Samen1 kwam langs in Apeldoorn. Je ziet de kinderen aan het werk en je
+    hoort de vrijwilligers vertellen hoe de dag ging.
+
+- youtube: _qJkZhSEybw
+  title: De aankondiging van de dag bij het Kadaster
+  kind: Aankondiging
+  date: 2024-10-05
+  city: Apeldoorn
+  host: Kadaster en Craftsmen
+  text: >-
+    Samen1 kondigde de dag aan. Zo'n zestig kinderen kwamen programmeren, samen met
+    vrijwilligers van het Kadaster en Craftsmen.
+
+- youtube: ggn-yGMqk0k
+  title: Devoxx4Kids in Nieuwegein
+  kind: Sfeerverslag
+  date: 2023-03-25
+  city: Nieuwegein
+  host: Ordina
+  text: >-
+    Een impressie van de zaterdag bij Ordina in Nieuwegein. In een paar minuten zie
+    je waar de kinderen die dag aan werkten.
+
+- youtube: S3dfscT4rGw
+  title: Devoxx4Kids bij Coolblue in Rotterdam
+  kind: Sfeerverslag
+  date: 2018-10-20
+  city: Rotterdam
+  host: Coolblue en JDuchess
+  text: >-
+    Een dag vol workshops in Rotterdam. Je ziet app bouwen, Code Combat en Sonic Pi
+    voorbijkomen.

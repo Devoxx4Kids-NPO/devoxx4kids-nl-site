@@ -10,10 +10,12 @@
       {{ $name := .name }}
       <li class="partner{{ if .logo }} partner--logo{{ end }}">
         {{ if $href }}<a class="partner__link" href="{{ $href }}"{{ if and .url (not .page) }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ end }}
+          {{- /* The name is shown next to the logo, so the image itself is decorative:
+                 an alt text here would make a screen reader announce the name twice. */ -}}
           {{ with .logo }}
-            <img class="partner__logo" src="{{ . }}" alt="{{ $name }}" loading="lazy">
+            <img class="partner__logo" src="{{ . }}" alt="" loading="lazy">
           {{ end }}
-          <span class="partner__name{{ if .logo }} d4k-sr{{ end }}">{{ .name }}</span>
+          <span class="partner__name">{{ .name }}</span>
         {{ if $href }}</a>{{ end }}
         {{ with .note }}<p class="partner__note">{{ . }}{{ with $href }} <a href="{{ . }}">Lees meer</a>{{ end }}</p>{{ end }}
       </li>
