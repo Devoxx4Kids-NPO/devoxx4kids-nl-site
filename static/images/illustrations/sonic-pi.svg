@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Koptelefoon met muzieknoten">
+  <!-- Cartoon headphones with notes and a sound wave, for the Sonic Pi module (making music with code). -->
+  <ellipse cx="120" cy="166" rx="86" ry="9" fill="#040707" opacity="0.15"/>
+  <path d="M58 118 V92 Q58 40 120 40 Q182 40 182 92 V118" fill="none" stroke="#040707" stroke-width="14" stroke-linecap="round"/>
+  <path d="M58 118 V92 Q58 40 120 40 Q182 40 182 92 V118" fill="none" stroke="#5a5a5a" stroke-width="6" stroke-linecap="round"/>
+  <g stroke="#040707" stroke-width="4" stroke-linejoin="round">
+    <rect x="38" y="96" width="40" height="58" rx="14" fill="#f2a426"/>
+    <rect x="162" y="96" width="40" height="58" rx="14" fill="#f2a426"/>
+    <rect x="70" y="104" width="14" height="42" rx="6" fill="#dedfe0"/>
+    <rect x="156" y="104" width="14" height="42" rx="6" fill="#dedfe0"/>
+  </g>
+  <!-- sound wave between the ear cups -->
+  <path d="M92 124 L100 124 L106 108 L114 140 L122 100 L130 146 L136 116 L142 124 L148 124" fill="none" stroke="#040707" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- notes -->
+  <g stroke="#040707" stroke-width="4" stroke-linejoin="round">
+    <path d="M196 16 V44" fill="none"/>
+    <path d="M196 16 L214 12 V38" fill="none"/>
+    <ellipse cx="189" cy="46" rx="8" ry="6" fill="#e2a02e"/>
+    <ellipse cx="207" cy="40" rx="8" ry="6" fill="#e2a02e"/>
+    <path d="M36 22 V46" fill="none"/>
+    <ellipse cx="29" cy="48" rx="8" ry="6" fill="#f78c40"/>
+    <path d="M36 22 Q44 26 44 36" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

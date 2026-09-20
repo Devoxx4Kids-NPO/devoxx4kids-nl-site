@@ -1,21 +1,36 @@
-<header>
-  <div class="header-content">
-    {{ if site.Params.logo }}
-      <a href="{{ site.BaseURL }}" class="logo-link">
-        <img 
-          src="{{ site.Params.logo | relURL }}" 
-          alt="{{ site.Params.logoAlt | default "Logo" }}"
-          class="logo"
-          style="max-width: {{ site.Params.logoWidth | default "150px" }}"
-        >
-      </a>
-    {{ end }}
-    
-    <!-- Your navigation menu here -->
-    <nav>
-      {{ range site.Menus.main }}
-        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
-      {{ end }}
-    </nav>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="{{ "/" | relURL }}" class="site-logo">
+      <img src="{{ site.Params.logo | relURL }}" alt="{{ site.Params.logoAlt | default "Devoxx4Kids Netherlands" }}" width="1066" height="375">
+    </a>
+
+    <div class="site-header__actions">
+      <nav class="site-nav" aria-label="Hoofdmenu">
+        <ul>
+          {{ $current := $.RelPermalink }}
+          {{ range site.Menus.main }}
+            {{ $url := .URL | relURL }}
+            {{ $active := cond (eq .URL "/") (eq $current $url) (hasPrefix $current $url) }}
+            <li><a href="{{ $url }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+
+      <button type="button" class="d4k-btn d4k-btn--secondary d4k-btn--sm theme-toggle" aria-pressed="false">Donkere modus</button>
+    </div>
   </div>
 </header>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.querySelector('.theme-toggle');
+    function sync() { btn.setAttribute('aria-pressed', String(root.dataset.theme === 'dark')); }
+    sync();
+    btn.addEventListener('click', function () {
+      var theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = theme;
+      try { localStorage.setItem('d4k-theme', theme); } catch (e) {}
+      sync();
+    });
+  })();
+</script>

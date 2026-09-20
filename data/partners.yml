@@ -1,0 +1,18 @@
+# Partners of the foundation, shown on the Partners page, grouped.
+# Per partner: name, optional logo (in static/images/partners/), optional page (internal link) or url (website), optional note.
+- group: Donateur
+  partners:
+    - name: Aramco Europe
+      logo: /images/partners/sponsor-aramco-europe.png
+      page: /pages/aramco_nl/
+      note: Jaarlijkse donatie voor extra hardware en eigen events.
+- group: Communities
+  partners:
+    - name: NLJUG
+    - name: JDuchess
+- group: Bedrijven
+  partners:
+    - name: Open Web
+    - name: OpenValue
+    - name: Kadaster
+    - name: Craftsmen

@@ -1,0 +1,33 @@
+{{- /* The practical facts of an event, on a white panel in the hero: time, location with a route link, ages, host.
+       Front matter: startTime, endTime, location {name, note, address, postcode}, city, ages, host. */ -}}
+{{ $loc := .Params.location }}
+<dl class="event-facts">
+  {{ with .Params.startTime }}
+    <div class="event-facts__item">
+      <dt>Tijd</dt>
+      <dd>{{ . }}{{ with $.Params.endTime }} – {{ . }}{{ end }} uur</dd>
+    </div>
+  {{ end }}
+  {{ with (and $loc $loc.name $loc) }}
+    <div class="event-facts__item">
+      <dt>Locatie</dt>
+      <dd>
+        <strong>{{ .name }}</strong>{{ with .note }} <span class="event-facts__note">({{ . }})</span>{{ end }}<br>
+        {{ .address }}<br>
+        {{ .postcode }} {{ $.Params.city }}
+        {{ $query := printf "%s, %s %s" .address .postcode $.Params.city }}
+        <br><a class="event-facts__route" href="https://www.google.com/maps/search/?api=1&amp;query={{ $query | urlquery }}" target="_blank" rel="noopener noreferrer">Plan je route<span class="d4k-sr"> naar {{ .name }} (opent een nieuw venster)</span></a>
+      </dd>
+    </div>
+  {{ else }}
+    {{ with $.Params.city }}
+      <div class="event-facts__item"><dt>Plaats</dt><dd>{{ . }}</dd></div>
+    {{ end }}
+  {{ end }}
+  {{ with .Params.ages }}
+    <div class="event-facts__item"><dt>Voor wie</dt><dd>Kinderen van {{ . }}</dd></div>
+  {{ end }}
+  {{ with .Params.host }}
+    <div class="event-facts__item"><dt>Organisatie</dt><dd>{{ . }}</dd></div>
+  {{ end }}
+</dl>

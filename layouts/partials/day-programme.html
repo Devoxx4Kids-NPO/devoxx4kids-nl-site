@@ -1,0 +1,19 @@
+{{- /* Stepper from the design system: the running order of an event day, from the `programma` front matter.
+       Each entry: tijd, titel, tekst. On a past event every step is marked as done. */ -}}
+{{ with .Params.programma }}
+{{ $past := lt (time $.Params.eventDate) now }}
+<section class="page-section" aria-labelledby="h-programma">
+  <h2 class="section-title" id="h-programma">{{ if $past }}Zo zag de dag eruit{{ else }}Zo ziet je dag eruit{{ end }}</h2>
+  <ol class="d4k-stepper">
+    {{ range $i, $step := . }}
+      <li class="d4k-stepper__item{{ if $past }} d4k-stepper__item--done{{ end }}">
+        <span class="d4k-stepper__marker" aria-hidden="true">{{ add $i 1 }}</span>
+        <div>
+          <p class="d4k-stepper__title">{{ $step.titel }}</p>
+          <p class="d4k-stepper__body"><span class="d4k-stepper__time">{{ $step.tijd }}</span> · {{ $step.tekst }}</p>
+        </div>
+      </li>
+    {{ end }}
+  </ol>
+</section>
+{{ end }}

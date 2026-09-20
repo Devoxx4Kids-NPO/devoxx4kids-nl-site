@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Hangslot met sleutel">
+  <!-- Cartoon padlock and key, for the Cyberrijbewijs module (hacking and keeping your accounts safe). -->
+  <ellipse cx="120" cy="166" rx="86" ry="9" fill="#040707" opacity="0.15"/>
+  <path d="M84 78 V58 Q84 22 120 22 Q156 22 156 58 V78" fill="none" stroke="#040707" stroke-width="18" stroke-linecap="round"/>
+  <path d="M84 78 V58 Q84 22 120 22 Q156 22 156 58 V78" fill="none" stroke="#a5a7aa" stroke-width="9" stroke-linecap="round"/>
+  <rect x="60" y="70" width="120" height="86" rx="16" fill="#f2a426" stroke="#040707" stroke-width="4"/>
+  <path d="M72 84 Q74 78 84 78" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <!-- keyhole -->
+  <circle cx="120" cy="104" r="12" fill="#040707"/>
+  <path d="M114 108 L110 134 H130 L126 108 Z" fill="#040707"/>
+  <!-- asterisks: a password -->
+  <g stroke="#040707" stroke-width="3.5" stroke-linecap="round">
+    <path d="M76 146 v-10 M71 141 h10 M72.5 137.5 l7 7 M79.5 137.5 l-7 7"/>
+    <path d="M164 146 v-10 M159 141 h10 M160.5 137.5 l7 7 M167.5 137.5 l-7 7"/>
+  </g>
+  <!-- key -->
+  <g stroke="#040707" stroke-width="4" stroke-linejoin="round">
+    <circle cx="200" cy="64" r="16" fill="#e2a02e"/>
+    <circle cx="200" cy="64" r="6" fill="#fdf0d9"/>
+    <path d="M190 76 L166 112 L174 117 L178 111 L184 115 L188 109 L182 105 L198 82 Z" fill="#e2a02e"/>
+  </g>
+</svg>

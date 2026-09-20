@@ -1,43 +1,53 @@
 {{ define "main" }}
+{{ $upcoming := slice }}
+{{ $past := slice }}
+{{ range .Pages }}
+  {{ if gt (time .Params.eventDate) now }}
+    {{ $upcoming = $upcoming | append . }}
+  {{ else }}
+    {{ $past = $past | append . }}
+  {{ end }}
+{{ end }}
 
-<div id="upcoming-events">
-  <div class="event-tabs">
-    <button onclick="showEvents('historical')">Vorige events</button>
-  </div>
+<h1 class="page-title">Events</h1>
 
-  <h1>Komende events</h1>
-  <div class="event-grid">
-    {{ range .Pages }}
-    {{ if gt (time .Params.eventDate) now }}
-    {{ partial "event-card.html" . }}
-    {{ end }}
-    {{ end }}
-  </div>
+<div class="segmented" role="group" aria-label="Welke events">
+  <button type="button" class="d4k-btn d4k-btn--secondary d4k-btn--sm" data-show="upcoming" aria-pressed="true">Komende events</button>
+  <button type="button" class="d4k-btn d4k-btn--secondary d4k-btn--sm" data-show="historical" aria-pressed="false">Vorige events</button>
 </div>
 
-<div id="historical-events" style="display:none;">
-  <div class="event-tabs">
-    <button onclick="showEvents('upcoming')">Komende events</button>
-  </div>
+<section id="upcoming-events" aria-labelledby="h-upcoming">
+  <h2 class="section-title" id="h-upcoming">Komende events</h2>
+  {{ if $upcoming }}
+    <div class="event-list">
+      {{ range sort $upcoming ".Params.eventDate" "asc" }}
+        {{ partial "event-card.html" . }}
+      {{ end }}
+    </div>
+  {{ else }}
+    <p>Er zijn op dit moment geen events gepland.</p>
+  {{ end }}
+</section>
 
-  <h1>Vorige events</h1>
-  <div class="events-list">
-    {{ range .Pages }}
-    {{ if lt (time .Params.eventDate) now }}
-    {{ partial "event-card.html" . }}
-    {{ end }}
+<section id="historical-events" aria-labelledby="h-historical" hidden>
+  <h2 class="section-title" id="h-historical">Vorige events</h2>
+  <div class="event-list">
+    {{ range sort $past ".Params.eventDate" "desc" }}
+      {{ partial "event-card.html" . }}
     {{ end }}
   </div>
-</div>
+</section>
 
 <script>
-  function showEvents(type) {
-     document.getElementById('upcoming-events').style.display =
-             type === 'upcoming' ? 'block' : 'none';
-      document.getElementById('historical-events').style.display =
-              type === 'historical' ? 'block' : 'none';
-  }
+  document.querySelectorAll('[data-show]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var type = btn.dataset.show;
+      document.getElementById('upcoming-events').hidden = type !== 'upcoming';
+      document.getElementById('historical-events').hidden = type !== 'historical';
+      document.querySelectorAll('[data-show]').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+    });
+  });
 </script>
-
-
 {{ end }}

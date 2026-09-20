@@ -1,0 +1,6 @@
+{{- /* Header for the formal pages: eyebrow, title and lead, no orange band. */ -}}
+<header class="page-header">
+  {{ with .eyebrow }}<p class="page-header__eyebrow">{{ . }}</p>{{ end }}
+  <h1 class="page-title">{{ .title }}</h1>
+  {{ with .lead }}<p class="page-header__lead">{{ . }}</p>{{ end }}
+</header>

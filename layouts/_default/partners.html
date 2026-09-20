@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{ partial "page-header.html" (dict "eyebrow" "Samenwerken" "title" .Title "lead" .Params.summary) }}
+
+{{ range hugo.Data.partners }}
+<section class="page-section" aria-label="{{ .group }}">
+  <h2 class="section-title">{{ .group }}</h2>
+  <ul class="partner-grid">
+    {{ range .partners }}
+      {{ $href := .page | default .url }}
+      {{ $name := .name }}
+      <li class="partner{{ if .logo }} partner--logo{{ end }}">
+        {{ if $href }}<a class="partner__link" href="{{ $href }}"{{ if and .url (not .page) }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ end }}
+          {{ with .logo }}
+            <img class="partner__logo" src="{{ . }}" alt="{{ $name }}" loading="lazy">
+          {{ end }}
+          <span class="partner__name{{ if .logo }} d4k-sr{{ end }}">{{ .name }}</span>
+        {{ if $href }}</a>{{ end }}
+        {{ with .note }}<p class="partner__note">{{ . }}{{ with $href }} <a href="{{ . }}">Lees meer</a>{{ end }}</p>{{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+<section class="page-section">
+  <div class="cta-band cta-band--formal">
+    <div>
+      <h2 class="section-title">Partner worden</h2>
+      <p class="intro">Wilt u als organisatie Devoxx4Kids Nederland ondersteunen, of wilt u meer weten over de mogelijkheden? Neem contact met ons op via <a href="mailto:info@devoxx4kids.nl">info@devoxx4kids.nl</a>{{ with .Params.phone }} of bel naar <a href="tel:{{ replaceRE `[^0-9]` "" . }}">{{ . }}</a>{{ end }}.</p>
+    </div>
+    <a class="d4k-btn d4k-btn--primary d4k-btn--lg" href="mailto:info@devoxx4kids.nl?subject=Partner%20worden">Neem contact op</a>
+  </div>
+</section>
+{{ end }}

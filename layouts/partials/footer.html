@@ -1,7 +1,16 @@
 {{ with .Params.hide_footer }}
  <!-- No footer here! -->
 {{ else }}
- <footer>
-   Website made by {{ .Site.Params.name }} in {{ now.Year }}
- </footer>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p><strong>{{ site.Params.name }}</strong><br>
+      Vragen? Mail naar <a href="mailto:info@devoxx4kids.nl">info@devoxx4kids.nl</a></p>
+    <ul>
+      <li><a href="{{ "/pages/stichting-d4k/" | relURL }}">Stichting</a></li>
+      <li><a href="{{ "/pages/anbi/" | relURL }}">ANBI</a></li>
+      <li><a href="{{ "/pages/partners/" | relURL }}">Partners</a></li>
+      <li>&copy; {{ now.Year }}</li>
+    </ul>
+  </div>
+</footer>
 {{ end }}

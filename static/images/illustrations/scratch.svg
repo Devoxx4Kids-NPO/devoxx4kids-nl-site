@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Laptop met programmeerblokken">
+  <!-- Cartoon laptop with stacked code blocks, for the Scratch workshop. -->
+  <ellipse cx="120" cy="166" rx="100" ry="9" fill="#040707" opacity="0.15"/>
+  <rect x="44" y="18" width="152" height="112" rx="12" fill="#040707"/>
+  <rect x="54" y="28" width="132" height="92" rx="4" fill="#ffffff"/>
+  <!-- blocks: a rounded "start" hat, then three command blocks that click together -->
+  <g stroke="#040707" stroke-width="3" stroke-linejoin="round">
+    <path d="M66 58 V46 Q66 36 82 36 H104 Q116 36 118 46 H134 Q138 46 138 50 V58 H88 l-4 4 h-8 l-4 -4 Z" fill="#f2a426"/>
+    <path d="M66 58 H72 l4 4 h8 l4 -4 H156 V74 H88 l-4 4 h-8 l-4 -4 H66 Z" fill="#e2a02e"/>
+    <path d="M66 74 H72 l4 4 h8 l4 -4 H146 V90 H88 l-4 4 h-8 l-4 -4 H66 Z" fill="#dedfe0"/>
+    <path d="M66 90 H72 l4 4 h8 l4 -4 H164 V106 H66 Z" fill="#f78c40"/>
+  </g>
+  <g fill="#040707">
+    <rect x="80" y="47" width="30" height="5" rx="2.5"/>
+    <rect x="96" y="64" width="44" height="5" rx="2.5"/>
+    <rect x="96" y="80" width="32" height="5" rx="2.5"/>
+    <rect x="96" y="96" width="52" height="5" rx="2.5"/>
+  </g>
+  <!-- keyboard deck -->
+  <path d="M30 130 H210 L224 152 Q224 158 216 158 H24 Q16 158 16 152 Z" fill="#dedfe0" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="96" y="144" width="48" height="7" rx="3.5" fill="#a5a7aa"/>
+</svg>
