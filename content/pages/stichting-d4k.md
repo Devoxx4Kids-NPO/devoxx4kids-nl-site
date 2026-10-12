@@ -5,7 +5,7 @@ summary: "Het doel van de stichting is het creëren van bewustwording en kindere
 ---
 
 ## Doelgroep
-De evenementen die worden georganiseerd onder de vlag van Devoxx4Kids Nederland zijn gericht op kinderen van de bovenbouw van de basisschool en de onderbouw van het voortgezet onderwijs (ongeveer 10-14 jaar).
+De evenementen die worden georganiseerd onder de vlag van Devoxx4Kids Nederland zijn gericht op kinderen van de bovenbouw van de basisschool en de onderbouw van het voortgezet onderwijs (ongeveer 8-14 jaar).
 
 ## Werkwijze
 De workshops worden voornamelijk gehouden in de weekenden en/of schoolvakanties en zijn in principe gratis. Bedrijven zorgen voor vrijwilligers die op een professionele manier de kinderen lesgeven en begeleiden bij de opdrachten.
