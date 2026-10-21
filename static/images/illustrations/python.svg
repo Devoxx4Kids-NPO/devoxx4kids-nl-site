@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Laptop met getypte code en een gamecontroller">
+  <!-- Cartoon laptop with typed, indented code and a game controller in front, for the Python module. -->
+  <ellipse cx="120" cy="166" rx="100" ry="9" fill="#040707" opacity="0.15"/>
+  <rect x="44" y="18" width="152" height="112" rx="12" fill="#040707"/>
+  <rect x="54" y="28" width="132" height="92" rx="4" fill="#2b2f33"/>
+  <!-- code lines, indented like real code -->
+  <g>
+    <rect x="64" y="38" width="20" height="6" rx="3" fill="#f2a426"/><rect x="88" y="38" width="44" height="6" rx="3" fill="#ffffff"/>
+    <rect x="76" y="50" width="28" height="6" rx="3" fill="#e2a02e"/><rect x="108" y="50" width="34" height="6" rx="3" fill="#dedfe0"/>
+    <rect x="88" y="62" width="18" height="6" rx="3" fill="#f78c40"/><rect x="110" y="62" width="48" height="6" rx="3" fill="#ffffff"/>
+    <rect x="88" y="74" width="40" height="6" rx="3" fill="#dedfe0"/>
+    <rect x="64" y="86" width="26" height="6" rx="3" fill="#f2a426"/><rect x="94" y="86" width="30" height="6" rx="3" fill="#ffffff"/>
+    <rect x="76" y="98" width="8" height="12" rx="1" fill="#f2a426"/>
+  </g>
+  <!-- keyboard deck -->
+  <path d="M30 130 H210 L224 152 Q224 158 216 158 H24 Q16 158 16 152 Z" fill="#dedfe0" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="70" y="144" width="48" height="7" rx="3.5" fill="#a5a7aa"/>
+  <!-- game controller -->
+  <path d="M150 122 H206 Q226 122 228 144 Q230 166 214 166 Q206 166 200 156 H156 Q150 166 142 166 Q126 166 128 144 Q130 122 150 122 Z" fill="#f78c40" stroke="#040707" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#040707">
+    <rect x="142" y="140" width="22" height="7" rx="2"/><rect x="149" y="133" width="8" height="21" rx="2"/>
+  </g>
+  <g fill="#ffffff" stroke="#040707" stroke-width="3">
+    <circle cx="200" cy="137" r="5"/><circle cx="212" cy="148" r="5"/>
+  </g>
+</svg>

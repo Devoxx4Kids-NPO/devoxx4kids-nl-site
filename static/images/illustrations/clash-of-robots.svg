@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Zelfgebouwde robotauto in een arena">
+  <!-- Cartoon self-built robot car racing around an arena ring, for the Clash of robots module. -->
+  <ellipse cx="120" cy="128" rx="112" ry="44" fill="#dedfe0" stroke="#040707" stroke-width="4"/>
+  <ellipse cx="120" cy="128" rx="92" ry="32" fill="none" stroke="#f2a426" stroke-width="6" stroke-dasharray="14 10"/>
+  <!-- speed lines -->
+  <g stroke="#040707" stroke-width="4" stroke-linecap="round">
+    <path d="M18 84 H44"/><path d="M10 100 H38"/><path d="M22 116 H44"/>
+  </g>
+  <!-- wires -->
+  <g fill="none" stroke-width="4" stroke-linecap="round">
+    <path d="M124 70 Q130 40 152 54 Q162 60 156 72" stroke="#f78c40"/>
+    <path d="M104 70 Q100 32 124 36 Q140 40 136 70" stroke="#e2a02e"/>
+  </g>
+  <!-- chassis and breadboard -->
+  <rect x="58" y="90" width="124" height="34" rx="8" fill="#2b2f33" stroke="#040707" stroke-width="4"/>
+  <rect x="78" y="66" width="86" height="28" rx="3" fill="#ffffff" stroke="#040707" stroke-width="3.5"/>
+  <path d="M86 74 H156 M86 86 H156" stroke="#a5a7aa" stroke-width="3" stroke-dasharray="2 5"/>
+  <rect x="92" y="72" width="24" height="14" rx="2" fill="#040707"/>
+  <circle cx="148" cy="80" r="5" fill="#f2a426" stroke="#040707" stroke-width="2.5"/>
+  <!-- wheels -->
+  <g stroke="#040707" stroke-width="4">
+    <circle cx="74" cy="126" r="20" fill="#e2a02e"/>
+    <circle cx="166" cy="126" r="20" fill="#e2a02e"/>
+    <circle cx="74" cy="126" r="7" fill="#040707"/>
+    <circle cx="166" cy="126" r="7" fill="#040707"/>
+  </g>
+</svg>

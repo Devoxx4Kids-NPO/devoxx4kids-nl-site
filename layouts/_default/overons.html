@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $modules := (site.GetPage "/modules").Pages }}
+{{ $modules := partial "active-modules.html" . }}
 {{ $events := where site.RegularPages "Section" "events" }}
 {{ $cities := slice }}
 {{ range hugo.Data.d4k_events }}{{ $cities = $cities | append .name }}{{ end }}

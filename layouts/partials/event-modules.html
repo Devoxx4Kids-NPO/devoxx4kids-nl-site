@@ -1,8 +1,9 @@
-{{- /* Resolves an event's `modules` front matter (module file names) to module pages, in the order given. */ -}}
+{{- /* Resolves an event's `modules` front matter (module file names) to module pages, in the order given.
+       Modules with `active: false` are left out. */ -}}
 {{ $pages := slice }}
 {{ range .Params.modules }}
   {{ with site.GetPage (printf "/modules/%s" .) }}
-    {{ $pages = $pages | append . }}
+    {{ if ne .Params.active false }}{{ $pages = $pages | append . }}{{ end }}
   {{ else }}
     {{ warnf "%s: unknown module %q in front matter" $.File.Path . }}
   {{ end }}

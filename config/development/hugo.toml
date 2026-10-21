@@ -1,0 +1,4 @@
+# Only for `hugo server` (environment "development"); merged over the root hugo.toml.
+# Production lives under /nl/ (see baseURL there). Without this override the dev server
+# also serves under /nl/, so http://localhost:1313/ shows a 404.
+baseURL = 'http://localhost:1313/'

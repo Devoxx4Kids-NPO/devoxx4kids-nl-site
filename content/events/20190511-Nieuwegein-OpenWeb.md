@@ -1,0 +1,45 @@
+---
+title: "Devoxx4kids op 11 mei 2019 in Nieuwegein"
+summary: "Open Web organiseerde voor de derde keer een Devoxx4Kids. Kinderen bouwden een game in Scratch, speelden CodeCombat en maakten hun eigen website."
+date: 2019-02-20
+eventDate: 2019-05-11
+city: Nieuwegein
+host: "Open Web"
+location:
+  name: "Open Web IT"
+  address: "Nevelgaarde 20G"
+  postcode: "3436 ZZ"
+startTime: "09:30"
+endTime: "16:00"
+ages: 10 t/m 14 jaar
+author: svermeer
+modules: [scratch, codecombat, website]
+programma:
+  - tijd: "09:30"
+    titel: Registratie
+    tekst: Je komt binnen en meldt je aan.
+  - tijd: "10:00"
+    titel: Welkom
+    tekst: Je hoort wat een echte programmeur doet.
+  - tijd: "10:30"
+    titel: Workshop 1
+    tekst: Je volgt je eerste workshop.
+  - tijd: "12:00"
+    titel: Lunch
+    tekst: Wij zorgen voor de lunch.
+  - tijd: "12:45"
+    titel: Workshop 2
+    tekst: Je volgt je tweede workshop.
+  - tijd: "14:00"
+    titel: Pauze
+    tekst: Korte pauze. Er staat een tussendoortje klaar.
+  - tijd: "14:15"
+    titel: Workshop 3
+    tekst: Je volgt je laatste workshop.
+  - tijd: "15:30"
+    titel: Afsluiten
+    tekst: Je laat aan je ouders zien wat je hebt gemaakt.
+category: events
+photo: /images/events/20190511-Nieuwegein-OpenWeb.jpg
+photoWidth: 75
+---

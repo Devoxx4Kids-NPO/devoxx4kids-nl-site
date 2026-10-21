@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Telefoon met een zelfgebouwde app">
+  <!-- Cartoon phone with an app on screen and puzzle-shaped code blocks clicking into it, for the App Inventor module. -->
+  <ellipse cx="120" cy="166" rx="96" ry="9" fill="#040707" opacity="0.15"/>
+  <!-- event block on the left, its tab pointing into the phone -->
+  <path d="M24 34 H70 V46 C84 44 84 64 70 62 V74 H24 Q18 74 18 68 V40 Q18 34 24 34 Z" fill="#f78c40" stroke="#040707" stroke-width="3.5" stroke-linejoin="round"/>
+  <rect x="28" y="46" width="32" height="6" rx="3" fill="#040707"/>
+  <rect x="28" y="57" width="20" height="6" rx="3" fill="#040707"/>
+  <!-- phone -->
+  <rect x="74" y="12" width="92" height="150" rx="16" fill="#040707"/>
+  <rect x="82" y="28" width="76" height="116" rx="4" fill="#ffffff"/>
+  <rect x="110" y="18" width="20" height="4" rx="2" fill="#5a5a5a"/>
+  <circle cx="120" cy="153" r="5" fill="#5a5a5a"/>
+  <!-- the app: title bar, picture, button -->
+  <rect x="82" y="28" width="76" height="18" fill="#f2a426"/>
+  <rect x="88" y="34" width="36" height="6" rx="3" fill="#040707"/>
+  <rect x="90" y="54" width="60" height="40" rx="6" fill="#dedfe0" stroke="#040707" stroke-width="3"/>
+  <circle cx="104" cy="66" r="6" fill="#e2a02e" stroke="#040707" stroke-width="2.5"/>
+  <path d="M94 90 L112 74 L124 84 L134 77 L146 90 Z" fill="#a5a7aa" stroke="#040707" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="96" y="104" width="48" height="16" rx="8" fill="#f78c40" stroke="#040707" stroke-width="3"/>
+  <rect x="108" y="110" width="24" height="4" rx="2" fill="#040707"/>
+  <rect x="96" y="128" width="36" height="5" rx="2.5" fill="#a5a7aa"/>
+  <!-- command block on the right, its tab clicking into the phone -->
+  <path d="M172 70 H216 Q222 70 222 76 V104 Q222 110 216 110 H172 V98 C158 100 158 80 172 82 Z" fill="#e2a02e" stroke="#040707" stroke-width="3.5" stroke-linejoin="round"/>
+  <rect x="180" y="82" width="32" height="6" rx="3" fill="#040707"/>
+  <rect x="180" y="93" width="20" height="6" rx="3" fill="#040707"/>
+</svg>

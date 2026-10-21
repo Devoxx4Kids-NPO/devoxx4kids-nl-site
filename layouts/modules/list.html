@@ -5,6 +5,6 @@
 </div>
 
 <div class="workshop-grid page-section">
-  {{ range .Pages.ByWeight }}{{ partial "module-card.html" . }}{{ end }}
+  {{ range partial "active-modules.html" . }}{{ partial "module-card.html" . }}{{ end }}
 </div>
 {{ end }}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Trap met levels en een vlag bovenaan">
+  <!-- Cartoon staircase of levels with a line of code on each step and a flag at the top, for the Hedy module (learning to code level by level). -->
+  <ellipse cx="124" cy="166" rx="104" ry="9" fill="#040707" opacity="0.15"/>
+  <!-- flag -->
+  <path d="M204 52 V10" stroke="#040707" stroke-width="4" stroke-linecap="round"/>
+  <path d="M206 12 L232 20 L206 30 Z" fill="#f78c40" stroke="#040707" stroke-width="3.5" stroke-linejoin="round"/>
+  <!-- steps -->
+  <g stroke="#040707" stroke-width="4" stroke-linejoin="round">
+    <rect x="22" y="124" width="52" height="38" rx="4" fill="#dedfe0"/>
+    <rect x="74" y="98" width="52" height="64" rx="4" fill="#e2a02e"/>
+    <rect x="126" y="74" width="52" height="88" rx="4" fill="#f78c40"/>
+    <rect x="178" y="52" width="52" height="110" rx="4" fill="#f2a426"/>
+  </g>
+  <!-- one more line of code on each level -->
+  <g fill="#040707">
+    <rect x="30" y="132" width="30" height="5" rx="2.5"/>
+    <rect x="82" y="106" width="30" height="5" rx="2.5"/><rect x="82" y="116" width="22" height="5" rx="2.5"/>
+    <rect x="134" y="82" width="30" height="5" rx="2.5"/><rect x="134" y="92" width="22" height="5" rx="2.5"/><rect x="142" y="102" width="26" height="5" rx="2.5"/>
+    <rect x="186" y="60" width="30" height="5" rx="2.5"/><rect x="186" y="70" width="22" height="5" rx="2.5"/><rect x="194" y="80" width="26" height="5" rx="2.5"/><rect x="194" y="90" width="18" height="5" rx="2.5"/>
+  </g>
+  <!-- level dots -->
+  <g fill="#ffffff" stroke="#040707" stroke-width="2.5">
+    <circle cx="48" cy="150" r="4.5"/>
+    <circle cx="92" cy="150" r="4.5"/><circle cx="108" cy="150" r="4.5"/>
+    <circle cx="136" cy="150" r="4.5"/><circle cx="152" cy="150" r="4.5"/><circle cx="168" cy="150" r="4.5"/>
+    <circle cx="186" cy="150" r="4.5"/><circle cx="198" cy="150" r="4.5"/><circle cx="210" cy="150" r="4.5"/><circle cx="222" cy="150" r="4.5"/>
+  </g>
+</svg>

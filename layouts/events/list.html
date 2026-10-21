@@ -30,25 +30,102 @@
   {{ end }}
 </section>
 
+{{- /* Past events are paged per year, newest year first. Without JavaScript all years show one after another. */ -}}
+{{ $past = sort $past ".Params.eventDate" "desc" }}
+{{ $years := slice }}
+{{ range $past }}
+  {{ $y := time.Format "2006" .Params.eventDate }}
+  {{ if not (in $years $y) }}{{ $years = $years | append $y }}{{ end }}
+{{ end }}
+
 <section id="historical-events" aria-labelledby="h-historical" hidden>
   <h2 class="section-title" id="h-historical">Vorige events</h2>
-  <div class="event-list">
-    {{ range sort $past ".Params.eventDate" "desc" }}
-      {{ partial "event-card.html" . }}
-    {{ end }}
+  {{- /* Shown by the script below; without JavaScript every year is listed anyway. */}}
+  <div class="year-picker" hidden>
+    <label class="year-picker__label" for="year-select">Kies een jaar</label>
+    <div class="year-picker__control">
+      <select id="year-select" class="year-picker__select">
+        {{ range $years }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+      </select>
+    </div>
+    <p class="year-picker__status" aria-live="polite"></p>
+  </div>
+  {{ range $years }}
+    {{ $y := . }}
+    {{ $events := slice }}
+    {{ range $past }}{{ if eq (time.Format "2006" .Params.eventDate) $y }}{{ $events = $events | append . }}{{ end }}{{ end }}
+    <div class="year-group" data-year-group="{{ $y }}">
+      <p class="year-group__title">{{ $y }} · {{ len $events }} {{ cond (eq (len $events) 1) "event" "events" }}</p>
+      <div class="event-list">
+        {{ range $events }}{{ partial "event-card.html" . }}{{ end }}
+      </div>
+    </div>
+  {{ end }}
+  <div class="year-nav">
+    <button type="button" class="d4k-btn d4k-btn--secondary d4k-btn--sm" data-year-step="-1">← Nieuwer</button>
+    <button type="button" class="d4k-btn d4k-btn--secondary d4k-btn--sm" data-year-step="1">Ouder →</button>
   </div>
 </section>
 
 <script>
-  document.querySelectorAll('[data-show]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var type = btn.dataset.show;
+  (function () {
+    var tabs = document.querySelectorAll('[data-show]');
+    var select = document.getElementById('year-select');
+    var status = document.querySelector('.year-picker__status');
+    var years = select ? Array.prototype.map.call(select.options, function (o) { return o.value; }) : [];
+    var current = years[0];
+
+    function showTab(type) {
       document.getElementById('upcoming-events').hidden = type !== 'upcoming';
       document.getElementById('historical-events').hidden = type !== 'historical';
-      document.querySelectorAll('[data-show]').forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b === btn));
+      tabs.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.show === type)); });
+    }
+
+    // Shows one year of past events and keeps it in the URL (#vorige-2018), so it can be shared.
+    function showYear(year, keepUrl) {
+      current = year;
+      select.value = year;
+      document.querySelectorAll('[data-year-group]').forEach(function (g) {
+        g.hidden = g.dataset.yearGroup !== year;
+        if (!g.hidden) {
+          var n = g.querySelectorAll('.d4k-event').length;
+          status.textContent = n + (n === 1 ? ' event' : ' events') + ' in ' + year;
+        }
+      });
+      var i = years.indexOf(year);
+      document.querySelector('[data-year-step="-1"]').hidden = i <= 0;
+      document.querySelector('[data-year-step="1"]').hidden = i >= years.length - 1;
+      if (!keepUrl) { history.replaceState(null, '', '#vorige-' + year); }
+    }
+
+    tabs.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        showTab(btn.dataset.show);
+        if (btn.dataset.show === 'historical' && current) { showYear(current); }
+        else { history.replaceState(null, '', location.pathname); }
       });
     });
-  });
+    if (select) {
+      select.addEventListener('change', function () { showYear(select.value); });
+    }
+    document.querySelectorAll('[data-year-step]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        showYear(years[years.indexOf(current) + Number(btn.dataset.yearStep)]);
+        document.getElementById('historical-events').scrollIntoView();
+      });
+    });
+
+    if (years.length) {
+      document.querySelector('.year-picker').hidden = false;
+      document.getElementById('historical-events').classList.add('is-paged');
+      var m = location.hash.match(/^#vorige(?:-(\d{4}))?$/);
+      if (m) {
+        showTab('historical');
+        showYear(years.indexOf(m[1]) >= 0 ? m[1] : years[0]);
+      } else {
+        showYear(years[0], true);
+      }
+    }
+  })();
 </script>
 {{ end }}
