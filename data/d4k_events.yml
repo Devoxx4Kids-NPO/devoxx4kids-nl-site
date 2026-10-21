@@ -22,3 +22,30 @@
 - name: Den Haag
   latitude: 52.0705
   longitude: 4.3007
+- name: Haarlem
+  latitude: 52.3874
+  longitude: 4.6462
+- name: Nijmegen
+  latitude: 51.8126
+  longitude: 5.8372
+- name: Delft
+  latitude: 52.0116
+  longitude: 4.3571
+- name: Veenendaal
+  latitude: 52.0283
+  longitude: 5.5589
+- name: Enschede
+  latitude: 52.2215
+  longitude: 6.8937
+- name: Amersfoort
+  latitude: 52.1561
+  longitude: 5.3878
+- name: Zwolle
+  latitude: 52.5168
+  longitude: 6.0830
+- name: Eindhoven
+  latitude: 51.4416
+  longitude: 5.4697
+- name: Westdorp
+  latitude: 52.8740
+  longitude: 6.8290

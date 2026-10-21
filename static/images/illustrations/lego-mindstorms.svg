@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Programmeerbare LEGO-steen op wielen">
+  <!-- Cartoon programmable brick on two wheels with a colour sensor, following a black line, for the LEGO Mindstorms module. -->
+  <ellipse cx="120" cy="164" rx="100" ry="9" fill="#040707" opacity="0.15"/>
+  <path d="M8 166 Q64 146 120 160 T232 154" fill="none" stroke="#040707" stroke-width="8" stroke-linecap="round"/>
+  <!-- wheels -->
+  <g stroke="#040707" stroke-width="4">
+    <circle cx="46" cy="118" r="34" fill="#2b2f33"/>
+    <circle cx="194" cy="118" r="34" fill="#2b2f33"/>
+    <circle cx="46" cy="118" r="14" fill="#a5a7aa" stroke-width="3"/>
+    <circle cx="194" cy="118" r="14" fill="#a5a7aa" stroke-width="3"/>
+  </g>
+  <!-- sensor on a cable -->
+  <path d="M152 34 Q164 4 190 18" fill="none" stroke="#040707" stroke-width="4" stroke-linecap="round"/>
+  <rect x="184" y="8" width="44" height="26" rx="6" fill="#5a5a5a" stroke="#040707" stroke-width="4"/>
+  <circle cx="214" cy="21" r="7" fill="#e2a02e" stroke="#040707" stroke-width="3"/>
+  <!-- the brick -->
+  <rect x="64" y="30" width="112" height="120" rx="14" fill="#dedfe0" stroke="#040707" stroke-width="4"/>
+  <path d="M74 44 Q76 38 84 38" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <rect x="82" y="44" width="76" height="40" rx="4" fill="#a5a7aa" stroke="#040707" stroke-width="3"/>
+  <g fill="#040707">
+    <rect x="90" y="52" width="34" height="5" rx="2.5"/>
+    <rect x="90" y="62" width="52" height="5" rx="2.5"/>
+    <rect x="90" y="72" width="24" height="5" rx="2.5"/>
+  </g>
+  <g stroke="#040707" stroke-width="3" stroke-linejoin="round">
+    <rect x="108" y="96" width="24" height="24" rx="4" fill="#f2a426"/>
+    <path d="M100 100 L88 108 L100 116 Z" fill="#5a5a5a"/>
+    <path d="M140 100 L152 108 L140 116 Z" fill="#5a5a5a"/>
+  </g>
+  <g fill="#5a5a5a"><rect x="80" y="132" width="16" height="8" rx="2"/><rect x="102" y="132" width="16" height="8" rx="2"/><rect x="124" y="132" width="16" height="8" rx="2"/><rect x="146" y="132" width="16" height="8" rx="2"/></g>
+</svg>

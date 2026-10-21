@@ -577,6 +577,59 @@ a:hover { text-decoration-thickness: 3px; }
 
 .segmented { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: 0 0 var(--space-6); }
 
+/* Past events, one year at a time (layouts/events/list.html) */
+.year-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+  background: var(--brand-soft);
+  color: var(--ink);
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-pop);
+  padding: var(--space-4) var(--space-5);
+  margin: 0 0 var(--space-6);
+}
+.year-picker[hidden] { display: none; }
+.year-picker__label { font-family: var(--font-display); font-size: 20px; line-height: 26px; font-weight: 700; }
+.year-picker__control { position: relative; }
+.year-picker__control::after {
+  content: "";
+  position: absolute;
+  right: var(--space-4);
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 3px solid var(--on-brand);
+  border-bottom: 3px solid var(--on-brand);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+.year-picker__select {
+  appearance: none;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  color: var(--on-brand);
+  background: var(--brand);
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-pop-sm);
+  padding: var(--space-2) var(--space-7) var(--space-2) var(--space-4);
+  min-height: 48px;
+  cursor: pointer;
+}
+.year-picker__select:hover { background: var(--brand-warm); }
+.year-picker__status { font-weight: 700; color: var(--ink-muted); margin: 0; }
+.year-group + .year-group { margin-top: var(--space-6); }
+.year-group__title { font-family: var(--font-display); font-size: 18px; line-height: 24px; font-weight: 600; color: var(--ink-muted); margin: 0 0 var(--space-4); }
+.is-paged .year-group__title { display: none; }
+.year-nav { display: flex; justify-content: space-between; gap: var(--space-3); margin-top: var(--space-6); }
+.year-nav [data-year-step="1"] { margin-left: auto; }
+.year-nav .d4k-btn[hidden] { display: none; }
+
 /* ---------- Hero ---------- */
 .d4k-hero {
   background: var(--brand);

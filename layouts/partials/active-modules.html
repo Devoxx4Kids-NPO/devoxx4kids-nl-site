@@ -1,0 +1,6 @@
+{{- /* The module pages that are switched on, by weight. A module is active unless its front matter says `active: false`. */ -}}
+{{ $pages := slice }}
+{{ with site.GetPage "/modules" }}
+  {{ $pages = where .Pages.ByWeight "Params.active" "ne" false }}
+{{ end }}
+{{ return $pages }}

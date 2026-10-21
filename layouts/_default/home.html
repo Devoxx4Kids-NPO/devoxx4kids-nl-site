@@ -18,9 +18,9 @@
 
 {{ partial "events-home-page.html" . }}
 
-{{ with site.GetPage "/modules" }}
+{{ with partial "active-modules.html" . }}
   {{ partial "module-grid.html" (dict
-    "pages" (first 6 .Pages.ByWeight)
+    "pages" (first 6 .)
     "title" "Dit kun je doen bij Devoxx4Kids"
     "lead" "Welke workshops er zijn, verschilt per event. Je ziet ze op de pagina van het event."
     "more" true) }}
