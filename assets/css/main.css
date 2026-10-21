@@ -298,10 +298,13 @@ a:hover { text-decoration-thickness: 3px; }
 .site-nav__caret svg { transition: transform 120ms ease-out; }
 .site-nav__caret[aria-expanded="true"] svg { transform: rotate(180deg); }
 
+/* The plate starts exactly at the bottom of the parent row. An offset here would leave a
+   band that belongs to neither the row nor the plate, and the pointer crossing it drops
+   :hover and shuts the menu before it can be clicked. */
 .site-nav__sub {
   display: none;
   position: absolute;
-  top: calc(100% + var(--space-1));
+  top: 100%;
   left: 0;
   z-index: 100;
   min-width: 220px;
