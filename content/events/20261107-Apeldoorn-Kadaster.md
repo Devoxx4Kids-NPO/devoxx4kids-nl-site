@@ -7,7 +7,7 @@ startTime: "09:30"
 endTime: "15:30"
 ages: "10 t/m 14 jaar"
 registration: https://www.eventbrite.nl/e/tickets-devoxx4kids-apeldoorn-2026-2001165334385
-modules: [Ozobot, micro, LEGO]
+modules: [ozobot, microbit-pong, lego-spike]
 programma:
   - tijd: "09:30"
     titel: Start registratie 
