@@ -18,7 +18,9 @@
       url: https://jduchess.org/
 - group: Bedrijven
   partners:
-    - name: Open Web
+    - name: PSG Technauts
+      logo: /images/partners/psgtechnauts.png
+      url: https://psgtechnauts.nl/
     - name: OpenValue
       logo: /images/partners/openvalue.png
       url: https://openvalue.eu/
