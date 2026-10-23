@@ -13,7 +13,7 @@ organisation:
   staff: Nee               # personen in dienst
   supervisory: Nee         # raad van commissarissen / toezicht
   board_paid: Nee          # beloning bestuurders
-contact_email: eddy.vos@devoxx4kids.nl
+contact_email: info@devoxx4kids.nl
 # Newest year first. Leave a document out when it is not published; the page shows a dash.
 finance:
   - year: 2025
@@ -32,7 +32,5 @@ audience: Jeugd 8 – 14 jaar
 region: Alleen Nederland
 size: Tot € 50.000
 social:
-  - label: Twitter
+  - label: X (Twitter) 
     value: "@devoxx4kidsnl"
-  - label: Facebook
-    value: https://www.facebook.com/Littil-108387778343588
