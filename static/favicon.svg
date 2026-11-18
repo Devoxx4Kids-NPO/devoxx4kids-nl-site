@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Devoxx4Kids favicon">
+  <defs>
+    <linearGradient id="d4kOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7b52f"/>
+      <stop offset="100%" stop-color="#f2a426"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="16" fill="url(#d4kOrange)"/>
+  <rect x="10" y="10" width="44" height="44" rx="12" fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.9"/>
+  <text x="32" y="39" text-anchor="middle" font-size="22" font-weight="900" font-family="Arial, Helvetica, sans-serif" fill="#ffffff">D4K</text>
+</svg>
